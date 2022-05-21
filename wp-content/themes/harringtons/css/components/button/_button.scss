@@ -1,0 +1,14 @@
+.btn {
+  border-radius: var(--border-radius);
+  display: flex;
+  font-size: inc_to_rem(2);
+  font-weight: var(--font-semi-bold);
+  text-decoration: none;
+
+  &--primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-colour);
+    padding: inc_to_rem(2) inc_to_rem(3);
+  }
+
+}

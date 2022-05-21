@@ -11,6 +11,12 @@
 </head>
 <body <?php body_class(); ?>>
 
-<div class="site-header">
-  <h1>HEADER</h1>
-</div>
+<header class="site-header">
+
+  <a href="/" title="Harringtons on the Hill" class="site-header__logo">
+    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Harringtons on the Hill" class="img-responsive" />
+  </a>
+
+  <span class="burger"><span></span></span>
+
+</header>

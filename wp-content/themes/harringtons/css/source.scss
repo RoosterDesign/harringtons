@@ -18,17 +18,45 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
 @import './vendor/normalize';
+@import './vendor/_owl-carousel';
 @import './helper/_mixins';
-@import './components/header/header';
-@import './components/footer/footer';
+@import './components/button/_button';
+@import './components/header/_header';
+@import './components/footer/_footer';
+@import './components/hero/_hero';
 
 :root {
+  
+  //== Colours
+  --white: #fff;
+  --darkGrey: #272727;
   --lightGrey: #FAFAFA;
+  --green: #6B7963;
 
-  --font:  'Jost', sans-serif;
+  //== General
   --body-bg: var(--lightGrey);
+  --border-radius: 4px;
+  
+  //== Type
+  --font:  'Jost', sans-serif;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  //== Buttons
+  --btn-primary-bg: var(--green);
+  --btn-primary-colour: var(--white);
+
+  //== Header  
+  --header-bg: var(--darkGrey);
+  --header-height-mobile: 80px;
+
 }
 
+html, body {
+  height: 100%;
+}
 
 
 html {
@@ -42,6 +70,10 @@ html {
 body {
   background: var(--body-bg);
   font-family: var(--font);
+  font-weight: var(--font-regular);
+  display: flex;
+  // min-height: 100vh;
+  flex-direction: column;
 }
 
 
@@ -50,4 +82,21 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+
+//== Responsive Images
+
+.img-responsive {
+    display: block;
+    height: auto;
+    width: 100%;  
+}
+
+.page {
+  flex: 1 0 auto;  
 }

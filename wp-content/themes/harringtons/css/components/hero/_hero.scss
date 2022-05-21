@@ -1,0 +1,52 @@
+
+.hero {
+  background: red;
+  display: flex;
+  height: 500px;
+  padding-top: var(--header-height-mobile);
+  position: relative;
+
+  &-content {
+    align-items: center;
+    color: var(--white);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+  }
+
+  &__title {
+    font-size: inc_to_rem(5);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(5);
+    margin-bottom: inc_to_rem(2);
+  }
+
+  &__intro {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+  }
+
+  .owl-carousel {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    .owl-stage-outer,
+    .owl-stage,
+    .owl-item { height: 100%; }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  
+}
