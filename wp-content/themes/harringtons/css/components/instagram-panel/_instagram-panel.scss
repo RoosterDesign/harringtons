@@ -1,0 +1,27 @@
+.instagram-panel {
+  padding: 0 0 inc_to_rem(5);
+  text-align: center;
+
+  &__title {
+    font-size: inc_to_rem(4);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(5);
+    margin-bottom: inc_to_rem(2);
+  }
+
+  &__content {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+
+    a {
+      @include textLink;
+    }
+
+  }  
+
+}
+
+.instagram-feed {
+  background: red;
+  margin: inc_to_rem(4) (-(inc_to_rem(2)));
+}

@@ -1,13 +1,22 @@
 .btn {
+  align-self: center;
   border-radius: var(--border-radius);
   display: flex;
   font-size: inc_to_rem(2);
   font-weight: var(--font-semi-bold);
+  justify-content: center;
   text-decoration: none;
-
+  
   &--primary {
     background: var(--btn-primary-bg);
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
     color: var(--btn-primary-colour);
+    padding: inc_to_rem(2) inc_to_rem(3);
+  }
+
+  &--secondary {
+    border: var(--btn-secondary-border);
+    color: var(--btn-secondary-colour);
     padding: inc_to_rem(2) inc_to_rem(3);
   }
 

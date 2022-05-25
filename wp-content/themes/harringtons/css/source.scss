@@ -24,6 +24,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import './components/header/_header';
 @import './components/footer/_footer';
 @import './components/hero/_hero';
+@import './components/reviews-panel/_reviews-panel';
+@import './components/reservation-panel/_reservation-panel';
+@import './components/offers-panel/_offers-panel';
+@import './components/menu-panel/_menu-panel';
+@import './components/gallery/_gallery';
+@import './components/functions-panel/_functions-panel';
+@import './components/instagram-panel/_instagram-panel';
 
 :root {
   
@@ -32,10 +39,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --darkGrey: #272727;
   --lightGrey: #FAFAFA;
   --green: #6B7963;
+  --rating-green: #00AA6C;
 
   //== General
   --body-bg: var(--lightGrey);
   --border-radius: 4px;
+  --max-content-width: 1412px;
   
   //== Type
   --font:  'Jost', sans-serif;
@@ -43,14 +52,24 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --font-regular: 400;
   --font-semi-bold: 600;
   --font-bold: 700;
+  --font-colour: var(--darkGrey);
+  --text-link-colour: var(--darkGrey);
+  --text-link-hover-colour: var(--green);
 
   //== Buttons
   --btn-primary-bg: var(--green);
   --btn-primary-colour: var(--white);
+  --btn-secondary-border: 2px solid var(--white);
+  --btn-secondary-colour: var(--white);
 
   //== Header  
   --header-bg: var(--darkGrey);
   --header-height-mobile: 80px;
+
+
+  //== Panels
+  --panel-bg: var(--white);
+  --panel-box-shadow: 0 10px 30px rgba(0,0,0,.05);
 
 }
 
@@ -99,4 +118,14 @@ p {
 
 .page {
   flex: 1 0 auto;  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: var(--max-content-width);
+  padding: 0 inc_to_rem(2);
+  position: relative;
+  z-index: 1;
 }

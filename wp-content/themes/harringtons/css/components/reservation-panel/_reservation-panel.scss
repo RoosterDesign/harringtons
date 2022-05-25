@@ -1,0 +1,43 @@
+.reservation-panel {
+  color: var(--white);
+  padding: inc_to_rem(4) 0;
+  position: relative;
+
+  &:after { @include mask; }
+
+  .resdiary {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    margin-bottom: inc_to_rem(3);
+    padding: inc_to_rem(1);
+  }
+
+  &__title {
+    font-size: inc_to_rem(4);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(5);
+    margin-bottom: inc_to_rem(2);
+  }
+
+  &__content {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+    margin-bottom: inc_to_rem(3);
+  }
+
+  &__tel {
+    font-size: inc_to_rem(3);
+    line-height: inc_to_rem(4);
+    font-weight: var(--font-bold);
+  }
+
+  &__bg {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,97 @@
+.reviews-panel {
+  overflow: hidden;
+  padding: inc_to_rem(5) inc_to_rem(2);
+
+  .owl-stage-outer { overflow: visible; }
+
+  .owl-carousel {
+
+    .owl-dots {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      margin-top: inc_to_rem(4);
+
+      .owl-dot {
+        border: 2px solid var(--green);
+        border-radius: 50%;
+        height: inc_to_rem(2);
+        margin: 0 5px;
+        width: inc_to_rem(2);
+
+        &.active { background: var(--green); }
+
+      }
+
+    }
+
+  }
+
+  > p {
+    font-size: inc_to_rem(2);
+    margin-top: inc_to_rem(3);
+    text-align: center;
+
+    a { @include textLink; }
+    
+  }
+
+}
+
+.review {
+  @include smallPanel;
+
+  &__title {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+    font-weight: var(--font-bold);
+    margin-bottom: inc_to_rem(3);
+  }
+
+  &__excerpt {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+    margin-bottom: inc_to_rem(3);
+  }
+
+  &__author {
+    font-size: inc_to_rem(2);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(3);
+  }
+
+}
+
+
+
+//== Rating 
+.review-rating {
+  display: flex;
+  margin-bottom: inc_to_rem(2);
+
+  &__dot {
+    border-radius: 50%;
+    display: block;
+    height: inc_to_rem(2);
+    margin-right: 4px;
+    width: inc_to_rem(2);
+  }
+
+  @mixin fullRating() { 
+    background: var(--rating-green);
+  }
+  
+  @mixin halfRating() {
+    background: linear-gradient(90deg,  var(--rating-green) 50%, #fff 50%);
+    border: 2px solid  var(--rating-green);
+  }
+
+  @for $i from 1 through 5 {
+    &--rating#{$i} { .review-rating__dot { @include fullRating; } }
+  }
+
+  @for $i from 1 through 5 {
+    &--rating#{$i}-5 { .review-rating__dot { @include halfRating; } }
+  }
+
+}

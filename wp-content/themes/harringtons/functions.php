@@ -22,17 +22,9 @@ if ( ! defined( '_S_VERSION' ) ) {
 function harringtons_scripts() {
   
 	// wp_enqueue_style( 'harringtons-style', get_stylesheet_uri(), array(), _S_VERSION );
-
-	/* Homepage Carousel */
-	// if ( is_page_template( 'templates/homepage.php' ) ) {
-		// if ( is_home() ) {
-		wp_enqueue_style( 'harringtons-animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', array(), _S_VERSION, true );
-	// }
-
 	
 	/* Google Fonts */	
-	 wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap', false );
-	
+	 wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap', false );
 	
 
 	/* jQuery */
@@ -44,6 +36,16 @@ function harringtons_scripts() {
 
 	/* Global Scripts */
 	wp_enqueue_script( 'harringtons-global', get_template_directory_uri() . '/js/scripts.js', array(), _S_VERSION, true );
+
+	/* Homepage Carousel */
+	// if ( is_page_template( 'templates/homepage.php' ) ) {
+	if ( is_home() ) {
+
+		wp_enqueue_style( 'harringtons-animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', array(), _S_VERSION, true );
+
+		wp_enqueue_script( 'harringtons-homepage', get_template_directory_uri() . '/js/home.js', array('harringtons-jquery'), _S_VERSION, true );
+
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'harringtons_scripts' );

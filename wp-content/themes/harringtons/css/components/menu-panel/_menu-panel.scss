@@ -1,0 +1,63 @@
+.menu-panel {
+  color: var(--white);
+  padding: inc_to_rem(5) 0;
+  position: relative;
+
+  &:after { @include mask; }
+
+  &__title {
+    font-size: inc_to_rem(4);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(5);
+    margin-bottom: inc_to_rem(2);
+  }
+
+  &__content {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+    margin-bottom: inc_to_rem(3);
+  }
+
+  &__bg {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .btn { margin-right: auto; }
+
+}
+
+.offers {
+  margin-bottom: inc_to_rem(2);
+}
+
+
+
+.offer {
+  @include smallPanel;
+  margin-bottom: inc_to_rem(2);
+
+  &__img {
+    margin-top: -(inc_to_rem(4));
+    margin-right: -(inc_to_rem(3));
+    margin-left: -(inc_to_rem(3));
+    margin-bottom: inc_to_rem(3);
+  }
+
+  &__title {
+    font-size: inc_to_rem(3);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(4);
+    margin-bottom: inc_to_rem(1);
+  }
+
+  &__content {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+  }
+
+}

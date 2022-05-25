@@ -1,0 +1,36 @@
+.offers-panel {
+  padding: inc_to_rem(5) 0;
+
+  &__title {
+    font-size: inc_to_rem(4);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(6);
+    margin-bottom: inc_to_rem(3);
+    text-align: center;
+  }
+
+}
+
+.offers { margin-bottom: inc_to_rem(2); }
+
+.offer {
+  @include smallPanel;
+  margin-bottom: inc_to_rem(2);
+
+  &__img {
+    margin: (-(inc_to_rem(4))) (-(inc_to_rem(3))) inc_to_rem(3);
+  }
+
+  &__title {
+    font-size: inc_to_rem(3);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(4);
+    margin-bottom: inc_to_rem(1);
+  }
+
+  &__content {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+  }
+
+}

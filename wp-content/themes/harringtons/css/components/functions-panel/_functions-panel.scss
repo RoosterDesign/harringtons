@@ -1,0 +1,28 @@
+.functions-panel {
+  padding: inc_to_rem(5) 0;
+  text-align: center;
+
+  &__title {
+    font-size: inc_to_rem(4);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(5);
+    margin-bottom: inc_to_rem(2);
+  }
+
+  &__content {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+  }  
+
+}
+
+.functions-panel-gallery {
+  margin: inc_to_rem(4) (-(inc_to_rem(2)));
+
+  &__img {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+}

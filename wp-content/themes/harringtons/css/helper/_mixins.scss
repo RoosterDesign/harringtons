@@ -29,6 +29,45 @@ $breakpoints: (mobile-lg: 375px,
 }
 
 
+//== Text Link Formatting
+
+@mixin textLink() {
+    border-bottom: 2px solid var(--text-link-colour);
+    color: var(--text-link-colour);
+    font-weight: var(--font-bold);
+    text-decoration: none;
+    
+    &:hover {
+        color: var(--text-link-hover-colour);
+    }
+}
+
+
+//== Image mask
+
+@mixin mask($bg: rgba(0,0,0,.6)) {
+    background: $bg;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+//== Small Panel
+
+@mixin smallPanel() {
+    background: var(--panel-bg);
+    border-radius: var(--border-radius);
+    color: var(--font-colour);
+    box-shadow: var(--panel-box-shadow);
+    overflow: hidden;
+    padding: inc_to_rem(4) inc_to_rem(3);
+}
+
+
 //== Unit to px
 
 $base-unit: 9;
