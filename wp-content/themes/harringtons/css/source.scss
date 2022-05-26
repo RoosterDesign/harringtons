@@ -45,7 +45,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   //== General
   --body-bg: var(--lightGrey);
   --border-radius: 4px;
-  --max-content-width: 1412px;
+  --max-content-width-tablet: 992px;
+  --max-content-width-desktop: 1412px;
   
   //== Type
   --font:  'Jost', sans-serif;
@@ -66,6 +67,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
   //== Header  
   --header-bg: var(--darkGrey);
   --header-height-mobile: 80px;
+  --header-height-tablet: 155px;
+  --header-padding-mobile: 20px;
+  --header-padding-tablet: 40px;
+  --header-padding-desktop: 60px; 
 
   //== Nav
   --mobile-nav-bg: var(--darkGrey);
@@ -140,8 +145,13 @@ p {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: var(--max-content-width);
+  max-width: var(--max-content-width-tablet);
   padding: 0 inc_to_rem(2);
   position: relative;
   z-index: 1;
+
+  @include mq(desktop) {
+    max-width: var(--max-content-width-desktop);
+  }
+
 }

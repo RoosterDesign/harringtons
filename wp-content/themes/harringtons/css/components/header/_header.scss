@@ -4,20 +4,69 @@
   justify-content: space-between;
   height: var(--header-height-mobile);
   left: 0;
-  padding: 0 inc_to_rem(2);
+  padding: 0 var(--header-padding-mobile);
   position: fixed;
   top: 0;
   transition: all .3s ease-in-out;
   width: 100%;
   z-index: 99;
 
+  @include mq(tablet) {
+    align-items: flex-start;
+    // background: red;
+    flex-wrap: wrap;
+    height: var(--header-height-tablet);
+    padding-top: inc_to_rem(3);
+  }
+
+  @include mq(tablet-lg) {
+    padding-right: var(--header-padding-tablet);
+    padding-left: var(--header-padding-tablet);
+  }
+
+  @include mq(desktop) {
+    padding-right: var(--header-padding-desktop);
+    padding-left: var(--header-padding-desktop);
+  }
+
+  &:after {
+
+    @include mq(tablet) {
+      background: var(--white);
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      right: var(--header-padding-mobile);
+      left: var(--header-padding-mobile);
+    }
+
+    @include mq(tablet-lg) {
+      right: var(--header-padding-tablet);
+      left: var(--header-padding-tablet);
+    }
+
+  }
+
   &--sticky {
     background: var(--header-bg);
+
+    &:after { display: none; }
+    
   }
 
   &__logo {
     display: block;
     width: 200px;
+
+    @include mq(tablet) {
+      margin-top: inc_to_rem(3);
+      position: absolute;
+      top: 0;
+      width: 250px;
+    }
+
   }
 
 }
@@ -32,6 +81,10 @@
   display: flex;
   height: 25px;  
   position: relative;
+
+  @include mq(tablet) {
+    display: none;
+  }
 
   span {
     background: var(--white);
