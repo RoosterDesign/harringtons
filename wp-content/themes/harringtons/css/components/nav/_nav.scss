@@ -1,0 +1,154 @@
+.nav {
+
+  @media only screen and (max-width: 767px) {
+    background: var(--mobile-nav-bg);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    position: fixed;  
+    right: -90vw;
+    top: 0;
+    transition: right .25s ease-in-out;
+    width: 90vw;
+    z-index: 99999;
+  }
+
+  &__logo {
+    margin: 30px 0 20px var(--mobile-nav-padding);
+    width: 175px;
+  }
+
+  &__close {
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    right: 18px;
+    position: absolute;
+    top: 20px;
+    -webkit-tap-highlight-color: transparent;
+    width: 40px;
+
+    span,
+    span:after {
+      background: var(--mobile-close-colour);
+      border-radius: 2px;
+      height: 2px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      top: calc(50% - (2px));
+      right: 0;
+      width: 40px;
+    }
+
+    span {
+      transform: rotate(45deg);
+    }
+
+    span:after {
+      content: '';
+      transform: rotate(-90deg);
+    }
+
+  }
+
+  &__contact {
+    border-top: 2px solid var(--mobile-nav-colour);
+    margin-top: auto;
+    padding: inc_to_rem(3) 0;
+    margin: auto var(--mobile-nav-padding) 0;
+
+    P {
+      color: var(--mobile-nav-colour);
+      font-size: 16px;
+      margin-bottom: inc_to_rem(2);
+
+      strong {
+        display: block;
+        font-size: inc_to_rem(3);
+        margin-bottom: inc_to_rem(1);
+      }
+
+    }
+
+  }
+
+  &__btn {
+    box-shadow: none;
+    width: 100%;
+  }
+
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 70px 0 0;
+
+  &__item { font-size: inc_to_rem(2); }
+
+  &__item--current {
+  
+    .nav-list__link {
+      font-weight: var(--font-bold);
+
+      &:after {
+        background: var(--nav-link-colour);
+        border-radius: 2px;
+        content: '';
+        height: 3px;
+        bottom: 10px;
+        left: var(--mobile-nav-padding);
+        position: absolute;
+        width:  50px;
+      }
+
+    }
+
+  }
+
+  &__link {
+    color: var(--nav-link-colour);
+    display: block;
+    padding: 20px 0 20px var(--mobile-nav-padding);
+    position: relative;
+    text-decoration: none;
+  }
+
+}
+
+.nav-mask {
+  background: var(--mobile-nav-mask);
+  display: block;
+  height: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity .2s ease;
+  width: 100%;
+  z-index: 99998;
+
+  @include mq(tablet) { 
+      display: none !important;
+  }
+
+}
+
+
+//== Open Mobile Nav
+
+.site-header--nav-open {
+
+  .nav {
+    @media only screen and (max-width: 767px) {
+      right: 0;
+    }
+  }
+
+  .nav-mask {
+    height: 100%;
+    opacity: 1;
+  }
+
+}

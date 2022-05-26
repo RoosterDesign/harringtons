@@ -31,9 +31,9 @@ $breakpoints: (mobile-lg: 375px,
 
 //== Text Link Formatting
 
-@mixin textLink() {
-    border-bottom: 2px solid var(--text-link-colour);
-    color: var(--text-link-colour);
+@mixin textLink($colour: var(--text-link-colour)) {
+    border-bottom: 2px solid $colour;
+    color: $colour;
     font-weight: var(--font-bold);
     text-decoration: none;
     

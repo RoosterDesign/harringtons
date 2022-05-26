@@ -16,12 +16,12 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-
 @import './vendor/normalize';
 @import './vendor/_owl-carousel';
 @import './helper/_mixins';
 @import './components/button/_button';
 @import './components/header/_header';
+@import './components/nav/_nav';
 @import './components/footer/_footer';
 @import './components/hero/_hero';
 @import './components/reviews-panel/_reviews-panel';
@@ -36,7 +36,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   
   //== Colours
   --white: #fff;
-  --darkGrey: #272727;
+  // --darkGrey: #272727;
+  --darkGrey: #1e1e1e;
   --lightGrey: #FAFAFA;
   --green: #6B7963;
   --rating-green: #00AA6C;
@@ -65,6 +66,21 @@ Use it to make something cool, have fun, and share what you've learned with othe
   //== Header  
   --header-bg: var(--darkGrey);
   --header-height-mobile: 80px;
+
+  //== Nav
+  --mobile-nav-bg: var(--darkGrey);
+  --nav-link-colour: var(--white);
+  --mobile-nav-colour: var(--white);
+  --mobile-close-colour: var(--white);
+  --mobile-nav-mask: rgba(0,0,0,0.9);
+  --mobile-nav-padding: 40px;
+
+
+  //== Footer
+  --footer-bg: var(--darkGrey);
+  --footer-colour: var(--white);
+  --footer-link-colour: var(--white);
+  --footer-hr-colour: var(--white);
 
 
   //== Panels

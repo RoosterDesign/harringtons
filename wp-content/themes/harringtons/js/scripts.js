@@ -11,21 +11,14 @@ function sitckyHeader(scrollY) {
   }
 
 }
-
-
-
-// window.addEventListener('scroll', checkHeader);
-
-// Detect scroll position
-// let scrollPosition = Math.round(window.scrollY);
-
-
-
 window.onscroll = function (e) {
   console.log('on scroll', window.scrollY);
   sitckyHeader(window.scrollY);
 };
 
+
+
+//== Owl Carousel
 
 $(".hero .owl-carousel").owlCarousel({
   animateOut: 'fadeOut',
@@ -38,6 +31,26 @@ $(".hero .owl-carousel").owlCarousel({
 
 document.addEventListener("DOMContentLoaded", function() {
 
+
+
+//== Mobile Nav toggle
+
+function mobileNavToggle() {
+  let openNavEl = document.querySelector('.js-open-nav');
+  let closeNavEl = document.querySelector('.js-close-nav');
+  let header = document.querySelector('.site-header');
+
+  openNavEl.addEventListener('click', function(){
+    header.classList.add('site-header--nav-open');
+  });
+
+  closeNavEl.addEventListener('click', function(){
+    header.classList.remove('site-header--nav-open');
+  });
+
+};
+
+mobileNavToggle();
   
   
 });

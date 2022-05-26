@@ -38,8 +38,7 @@ function harringtons_scripts() {
 	wp_enqueue_script( 'harringtons-global', get_template_directory_uri() . '/js/scripts.js', array(), _S_VERSION, true );
 
 	/* Homepage Carousel */
-	// if ( is_page_template( 'templates/homepage.php' ) ) {
-	if ( is_home() ) {
+	if ( is_page_template( 'templates/homepage.php' ) ) {
 
 		wp_enqueue_style( 'harringtons-animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', array(), _S_VERSION, true );
 
