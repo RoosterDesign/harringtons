@@ -67,10 +67,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
   //== Header  
   --header-bg: var(--darkGrey);
   --header-height-mobile: 80px;
-  --header-height-tablet: 155px;
+  --header-height-tablet: 150px;
   --header-padding-mobile: 20px;
   --header-padding-tablet: 40px;
-  --header-padding-desktop: 60px; 
+  --header-padding-desktop-lg: 60px; 
+
 
   //== Nav
   --mobile-nav-bg: var(--darkGrey);
@@ -91,6 +92,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
   //== Panels
   --panel-bg: var(--white);
   --panel-box-shadow: 0 10px 30px rgba(0,0,0,.05);
+
+
+  //== Hero
+  --hero-height-mobile: 500px;
+  --hero-height-tablet: 650px;
+  --hero-height-desktop: 50vw;
+  --hero-max-height: 1000px;
 
 }
 

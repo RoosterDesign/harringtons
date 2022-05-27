@@ -20,6 +20,17 @@
     flex-basis: 100%;
   }
 
+  @include mq(desktop) {
+    flex: 1;
+    flex-basis: auto;
+    flex-direction: row;
+    padding-left: inc_to_rem(5);
+  }
+
+  @include mq(desktop-lg) {
+    padding-left: inc_to_rem(10);
+  }
+
   &__logo {
     margin: 30px 0 20px var(--mobile-nav-padding);
     width: 175px;
@@ -83,6 +94,11 @@
       order: 1;
     }
 
+    @include mq(desktop) {
+      order: 2;
+      margin-left: auto;
+    }
+
     P {
       color: var(--mobile-nav-colour);
       font-size: 16px;
@@ -91,6 +107,10 @@
       @include mq(tablet) {
         margin: 0 inc_to_rem(2) 0 0;
         text-align: right;
+      }
+
+      @include mq(desktop-md) {
+        margin-right: inc_to_rem(3);
       }
 
       strong {
@@ -129,7 +149,24 @@
     padding: 0;
   }
 
-  &__item { font-size: inc_to_rem(2); }
+  @include mq(desktop) {
+    align-items: center;
+    margin: 0;
+    order: 1;
+  }
+
+  &__item {
+    font-size: inc_to_rem(2);
+
+    @include mq(desktop) {
+      margin-right: inc_to_rem(3);
+    }
+
+    @include mq(desktop-lg) {
+      margin-right: inc_to_rem(5);
+    }
+
+  }
 
   &__item--current {
   
@@ -137,23 +174,21 @@
       font-weight: var(--font-bold);
       position: relative;
 
-      &:after {
-        background: var(--nav-link-colour);
-        border-radius: 2px;
-        content: '';
-        height: 3px;
-        bottom: 10px;
-        left: var(--mobile-nav-padding);
-        position: absolute;
-        width:  50px;
+      @include mq(tablet) {
+        opacity: 1;
+      }
 
-        @include mq(tablet) {
-          bottom: -13px;
-          left: 0;
-          width: 100%;
+      &:after {
+        animation: none;
+        opacity: 1;
+
+        @include mq(desktop) {
+          bottom: -10px;
         }
 
       }
+
+      &:hover:after { animation: none; }
 
     }
 
@@ -165,14 +200,84 @@
     padding: 20px 0 20px var(--mobile-nav-padding);
     position: relative;
     text-decoration: none;
+    transition: all .2s ease-in-out;
 
     @include mq(tablet) {
       padding: 0;
     }
 
+    @include mq(desktop) {
+      opacity: 0.7;
+    }
+
+    &:after {
+      animation-name: fadeNavOut;
+      animation-duration: .3s;
+      background: var(--nav-link-colour);
+      border-radius: 2px;
+      content: '';
+      height: 3px;
+      bottom: 10px;
+      left: var(--mobile-nav-padding);
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      width: 50px;
+    
+      @include mq(tablet) {
+        bottom: -17px;
+        left: 0;
+        width: 100%;
+      }
+
+      @include mq(desktop) {
+        bottom: -15px;
+      }
+
+    }
+
+    &:hover {
+      @include mq(desktop) {
+        opacity: 1;
+      }
+
+      &:after {
+        @include mq(desktop) {
+          animation-name: fadeNavIn;
+          animation-duration: .3s;
+          animation-fill-mode: forwards;
+        }
+      }
+
+    }
+
   }
 
 }
+
+
+@keyframes fadeNavIn {
+  from {
+    bottom: -15px;
+    opacity: 0;
+  }
+  to {
+    bottom: -10px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeNavOut {
+  from {
+    bottom: -10px;
+    opacity: 1;
+  }
+  to {
+    bottom: -15px;
+    opacity: 0;    
+  }
+}
+
 
 .nav-mask {
   background: var(--mobile-nav-mask);

@@ -12,11 +12,8 @@
   z-index: 99;
 
   @include mq(tablet) {
-    align-items: flex-start;
-    // background: red;
     flex-wrap: wrap;
     height: var(--header-height-tablet);
-    padding-top: inc_to_rem(3);
   }
 
   @include mq(tablet-lg) {
@@ -24,9 +21,9 @@
     padding-left: var(--header-padding-tablet);
   }
 
-  @include mq(desktop) {
-    padding-right: var(--header-padding-desktop);
-    padding-left: var(--header-padding-desktop);
+  @include mq(desktop-lg) {
+    padding-right: var(--header-padding-desktop-lg);
+    padding-left: var(--header-padding-desktop-lg);
   }
 
   &:after {
@@ -47,12 +44,20 @@
       left: var(--header-padding-tablet);
     }
 
+    @include mq(desktop) {
+      display: none;
+    }
+
   }
 
   &--sticky {
     background: var(--header-bg);
 
     &:after { display: none; }
+
+    @media only screen and (max-width: 1366px) {
+      .nav-list__item--current .nav-list__link:after { display: none; }
+    }
     
   }
 
@@ -65,6 +70,15 @@
       position: absolute;
       top: 0;
       width: 250px;
+    }
+
+    @include mq(desktop) {
+      position: relative;
+      margin-top: 0;
+    }
+
+    @include mq(desktop-lg) {
+      width: 300px;
     }
 
   }

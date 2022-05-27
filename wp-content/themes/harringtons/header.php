@@ -66,7 +66,7 @@
         <strong>01926 852 074</strong>
         42 Castle Hill, Kenilworth, CV8 1NB
       </p>
-      <a href="" title="" class="btn btn--primary nav__btn">Book a table</a>
+      <a href="" title="" class="btn btn--primary nav__btn btn--small">Book a table</a>
     </div>
 
   </nav>
