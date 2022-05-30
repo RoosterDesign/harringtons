@@ -3,9 +3,10 @@
   border-radius: var(--border-radius);
   display: flex;
   font-size: inc_to_rem(2);
-  font-weight: var(--font-semi-bold);
+  font-weight: var(--font-medium);
   justify-content: center;
   text-decoration: none;
+  transition: all .2s ease-in-out;  
 
   @include mq(desktop) {
     font-size: inc_to_rem(3);
@@ -21,12 +22,28 @@
       padding: inc_to_rem(3) inc_to_rem(4);
     }
 
+    &:hover {
+      box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+      background: lighten(#6B7963, 5%);
+    }
+
+    &:active {
+      box-shadow: none;
+      background: darken(#6B7963, 5%);
+    }
+
   }
 
   &--secondary {
     border: var(--btn-secondary-border);
     color: var(--btn-secondary-colour);
     padding: inc_to_rem(2) inc_to_rem(3);
+
+    &:hover {
+      background: var(--btn-secondary-hover-bg);
+      color: var(--btn-secondary-hover-colour);
+    }
+
   }
 
   &--small {

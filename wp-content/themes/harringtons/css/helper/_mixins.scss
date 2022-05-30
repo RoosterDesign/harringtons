@@ -36,6 +36,7 @@ $breakpoints: (mobile-lg: 375px,
     color: $colour;
     font-weight: var(--font-bold);
     text-decoration: none;
+    transition: color .2s ease-in-out;
     
     &:hover {
         color: var(--text-link-hover-colour);
@@ -65,6 +66,15 @@ $breakpoints: (mobile-lg: 375px,
     box-shadow: var(--panel-box-shadow);
     overflow: hidden;
     padding: inc_to_rem(4) inc_to_rem(3);
+
+    @include mq(tablet-lg) {
+        padding: inc_to_rem(5) inc_to_rem(4);
+    }
+
+    @include mq(desktop) {
+        padding: inc_to_rem(6) inc_to_rem(6);
+    }
+
 }
 
 

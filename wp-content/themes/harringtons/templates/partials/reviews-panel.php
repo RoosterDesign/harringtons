@@ -1,5 +1,5 @@
 <section class="reviews-panel">
-  <div class="owl-carousel">      
+  <div class="container">      
     <article class="review">
       <span class="review-rating review-rating--rating1">
         <span class="review-rating__dot"></span>

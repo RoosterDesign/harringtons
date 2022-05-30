@@ -24,7 +24,7 @@ function harringtons_scripts() {
 	// wp_enqueue_style( 'harringtons-style', get_stylesheet_uri(), array(), _S_VERSION );
 	
 	/* Google Fonts */	
-	 wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap', false );
+	 wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap', false );
 	
 
 	/* jQuery */

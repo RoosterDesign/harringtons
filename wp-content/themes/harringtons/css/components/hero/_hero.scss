@@ -3,13 +3,12 @@
   color: var(--white);
   display: flex;
   height: var(--hero-height-mobile);
-  padding-top: var(--header-height-mobile);
+  padding-top: var(--header-height);
   position: relative;
   text-align: center;
 
   @include mq(tablet) {
     height: var(--hero-height-tablet);
-    padding-top: var(--header-height-tablet);
   }
 
   @include mq(desktop) {

@@ -5,14 +5,13 @@ function sitckyHeader(scrollY) {
   let header = document.querySelector('.site-header');
 
   if (scrollY > 0) {
-    header.classList.add('site-header--sticky')
+    header.classList.add('site-header--sticky');
   } else {
-    header.classList.remove('site-header--sticky')
+    header.classList.remove('site-header--sticky');
   }
 
 }
 window.onscroll = function (e) {
-  console.log('on scroll', window.scrollY);
   sitckyHeader(window.scrollY);
 };
 

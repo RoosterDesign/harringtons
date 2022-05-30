@@ -2,23 +2,26 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  height: var(--header-height-mobile);
+  height: var(--header-height);
   left: 0;
   padding: 0 var(--header-padding-mobile);
-  position: fixed;
+  position: absolute;
   top: 0;
   transition: all .3s ease-in-out;
   width: 100%;
   z-index: 99;
 
-  @include mq(tablet) {
-    flex-wrap: wrap;
-    height: var(--header-height-tablet);
-  }
-
   @include mq(tablet-lg) {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
     padding-right: var(--header-padding-tablet);
     padding-left: var(--header-padding-tablet);
+  }
+
+  @include mq(desktop) {
+    align-items: center;
+    flex-direction: row;
   }
 
   @include mq(desktop-lg) {
@@ -26,55 +29,19 @@
     padding-left: var(--header-padding-desktop-lg);
   }
 
-  &:after {
-
-    @include mq(tablet) {
-      background: var(--white);
-      bottom: 0;
-      content: '';
-      display: block;
-      height: 1px;
-      position: absolute;
-      right: var(--header-padding-mobile);
-      left: var(--header-padding-mobile);
-    }
-
-    @include mq(tablet-lg) {
-      right: var(--header-padding-tablet);
-      left: var(--header-padding-tablet);
-    }
-
-    @include mq(desktop) {
-      display: none;
-    }
-
-  }
-
   &--sticky {
-    background: var(--header-bg);
-
-    &:after { display: none; }
-
-    @media only screen and (max-width: 1366px) {
-      .nav-list__item--current .nav-list__link:after { display: none; }
-    }
-    
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-duration: .4s;
+    animation-name: slideInNav;
   }
 
   &__logo {
-    display: block;
+    display: flex;
     width: 200px;
 
     @include mq(tablet) {
-      margin-top: inc_to_rem(3);
-      position: absolute;
-      top: 0;
       width: 250px;
-    }
-
-    @include mq(desktop) {
-      position: relative;
-      margin-top: 0;
     }
 
     @include mq(desktop-lg) {
@@ -85,6 +52,105 @@
 
 }
 
+@keyframes slideInNav {
+  from {
+    top: calc(var(--header-height) * -1);
+  }
+  to {
+    background: var(--header-bg);
+    position: fixed;
+    top: 0;
+  }
+}
+
+
+
+//== Contact 
+
+.header-contact {
+  border-top: 2px solid var(--mobile-nav-colour);
+  margin-top: auto;
+  padding: inc_to_rem(3) 0;
+  margin: auto var(--mobile-nav-padding) 0;
+
+  @include mq(tablet) {
+    margin: auto var(--tablet-nav-padding) 0;
+    padding: inc_to_rem(3) 0 inc_to_rem(5);
+  }
+
+  @include mq(tablet-lg) {
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+  }
+
+  P {
+    color: var(--mobile-nav-colour);
+    font-size: 14px;
+    margin-bottom: inc_to_rem(2);
+
+    @include mq(tablet) {
+      font-size: inc_to_rem(2);
+      margin-bottom: inc_to_rem(3);
+    }
+
+    @include mq(tablet-lg) {
+      margin: 0;
+      position: absolute;
+      text-align: right;
+      top: 20px;
+    }
+
+    @include mq(desktop) {
+      font-size: 16px;
+      margin-right: inc_to_rem(2);
+      position: relative;
+      top: auto;
+    }
+
+    @include mq(desktop-md) {      
+      margin-right: inc_to_rem(3);
+    }
+
+    strong {
+      display: block;
+      font-size: inc_to_rem(3);
+      margin-bottom: inc_to_rem(1);
+
+      @include mq(tablet) {
+        font-size: inc_to_rem(4);
+      }
+
+      @include mq(tablet-lg) {
+        font-size: inc_to_rem(3);
+        margin-bottom: 4px;
+      }
+
+      @include mq(desktop) {
+        margin-bottom: inc_to_rem(1);
+      }
+
+    }
+
+  }
+
+
+  &__btn {
+
+    @media only screen and (max-width: 992px) {
+      box-shadow: none;
+      width: 100%;
+    }
+
+    // @include mq(tablet-lg) {
+    //   display: none;
+    // }
+    
+  }
+
+}
 
 
 //== Burger Menu
@@ -96,7 +162,7 @@
   height: 25px;  
   position: relative;
 
-  @include mq(tablet) {
+  @include mq(tablet-lg) {
     display: none;
   }
 
