@@ -13,12 +13,19 @@
   }
 
   .container {
+
     @media only screen and (max-width: 992px) {
       padding: 0;
     }
+    
     @include mq(tablet-lg) {
-      flex-direction: row;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: inc_to_rem(4);
+    }
+
+    @include mq(desktop) {
+      grid-gap: inc_to_rem(5);
     }
     
   }
@@ -74,14 +81,6 @@
 
 .review {
   @include smallPanel;
-
-  @include mq(tablet-lg) {
-    width: calc(100% / 3 - 16px);
-  }
-  
-  @include mq(desktop) {
-    width: calc(100% / 3 - 32px);
-  }
 
   &__title {
     font-size: inc_to_rem(2);

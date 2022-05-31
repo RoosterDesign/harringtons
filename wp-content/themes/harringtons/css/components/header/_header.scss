@@ -4,12 +4,17 @@
   justify-content: space-between;
   height: var(--header-height);
   left: 0;
+  min-height: var(--header-height);
   padding: 0 var(--header-padding);
   position: absolute;
   top: 0;
   transition: all .3s ease-in-out;
   width: 100%;
   z-index: 99;
+
+  @include mq(tablet) {
+    background: var(--header-bg);
+  }
 
   @include mq(tablet-lg) {
     align-items: flex-start;
@@ -58,6 +63,19 @@
     position: fixed;
     top: 0;
   }
+}
+
+
+
+
+//== Home
+
+body.home {
+
+  .site-header {
+    background: none;
+  }
+
 }
 
 

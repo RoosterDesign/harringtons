@@ -1,5 +1,6 @@
 .reservation-panel {
   background-attachment: fixed;
+  background-color: var(--darkGrey);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,6 +23,8 @@
   @include mq(desktop-lg) {
     padding: inc_to_rem(30) 0;
   }
+
+  &:after { @include mask; }
 
   .container {
 
@@ -48,8 +51,6 @@
     }
 
   }
-
-  &:after { @include mask; }
 
   .resdiary {
     background: var(--white);

@@ -32,6 +32,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import './components/functions-panel/_functions-panel';
 @import './components/full-width-image/_full-width-image';
 @import './components/instagram-panel/_instagram-panel';
+@import './components/masthead/_masthead';
+@import './components/menu-list/_menu-list';
+@import './components/resdiary/_resdiary';
 
 :root {
   
@@ -45,6 +48,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
   //== General
 
+  --unit: 9px;
   --body-bg: var(--lightGrey);
   --border-radius: 4px;
   --max-content-width-tablet: 992px;
@@ -82,6 +86,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --header-padding: 20px;  
 
 
+  //== Masthead
+  --masthead-height: 275px;
+
+
   //== Nav
 
   --mobile-nav-bg: var(--darkGrey);
@@ -104,7 +112,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   //== Panels
 
   --panel-bg: var(--white);
-  --panel-box-shadow: 0 10px 30px rgba(0,0,0,.05);
+  --panel-box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  --panel-box-shadow-hover: 0 15px 35px rgba(0,0,0,0.5);
   --panel-padding: calc(9px * 4) calc(9px * 3);
   
 
@@ -142,6 +151,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --max-content-width: 1200px;
     --panel-padding: calc(9px * 4);
     --block-padding: calc(9px * 8);
+    --masthead-height: 350px;
   }
 }
 
@@ -155,6 +165,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --hero-height: 50vw;
     --panel-padding: calc(9px * 5) calc(9px * 4);
     --block-padding: calc(9px * 12);
+    --masthead-height: 400px;
   }
 }
 
@@ -165,6 +176,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   :root {
     --block-padding: calc(12px * 12);
     --panel-padding: calc(9px * 6) calc(9px * 5);
+    --masthead-height: 500px;
   }
 }
 
@@ -176,6 +188,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --max-content-width: 1600px;
     --header-padding: 60px; 
     --footer-col-width: 400px;
+    --masthead-height: 600px;
   }
 }
 
@@ -200,8 +213,16 @@ body {
   font-family: var(--font);
   font-weight: var(--font-regular);
   display: flex;
-  // min-height: 100vh;
   flex-direction: column;
+
+  @include mq(tablet) {
+    padding-top: var(--header-height);
+  }
+
+  &.home {
+    padding-top: 0;
+  }
+
 }
 
 
