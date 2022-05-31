@@ -1,6 +1,6 @@
 .reviews-panel {
   overflow: hidden;
-  padding: inc_to_rem(5) inc_to_rem(2);
+  padding: var(--block-padding) inc_to_rem(2);
   
   @include mq(tablet) {
     padding-right: inc_to_rem(3);
@@ -8,11 +8,8 @@
   }
   
   @include mq(tablet-lg) {
-    padding: inc_to_rem(7) 0;
-  }
-
-  @include mq(desktop) {
-    padding: inc_to_rem(15) 0;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .container {
@@ -23,6 +20,7 @@
       flex-direction: row;
       justify-content: space-between;
     }
+    
   }
 
   .owl-stage-outer { overflow: visible; }
@@ -63,6 +61,10 @@
 
     @include mq(desktop) {
       font-size: inc_to_rem(3);
+      margin-top: inc_to_rem(7);
+    }
+
+    @include mq(desktop-md) {
       margin-top: inc_to_rem(9);
     }
     
@@ -76,6 +78,7 @@
   @include mq(tablet-lg) {
     width: calc(100% / 3 - 16px);
   }
+  
   @include mq(desktop) {
     width: calc(100% / 3 - 32px);
   }
@@ -85,20 +88,28 @@
     line-height: inc_to_rem(3);
     font-weight: var(--font-bold);    
     margin-top: inc_to_rem(4);
-    margin-bottom: inc_to_rem(3);
+    margin-bottom: inc_to_rem(2);
   }
 
   &__excerpt {
     font-size: inc_to_rem(2);
     line-height: inc_to_rem(3);
-    margin-bottom: inc_to_rem(3);
+
+    @include mq(desktop) {
+      line-height: inc_to_rem(4);
+    }
+    
   }
 
   &__author {
     font-size: inc_to_rem(2);
     font-weight: var(--font-bold);
     line-height: inc_to_rem(3);
-    margin-top: inc_to_rem(5);
+    margin-top: inc_to_rem(3);  
+
+    @include mq(tablet) {
+      margin-top: inc_to_rem(4);
+    }
 
     @include mq(desktop) {
       margin-top: inc_to_rem(6);

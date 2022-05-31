@@ -1,5 +1,9 @@
 .gallery {
 
+  @include mq(tablet) {
+    display: flex;
+  }
+
   &__img {
     display: block;
     height: auto;

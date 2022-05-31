@@ -35,9 +35,17 @@ Template Name: Homepage
   <?php include get_theme_file_path("templates/partials/functions-panel.php"); ?>    
   <!-- end: Functions Panel -->
 
+  <!-- Full Width Image -->
+  <?php include get_theme_file_path("templates/partials/full-width-image.php"); ?>    
+  <!-- end: Full Width Image -->
+
   <!-- Instagram Panel -->
   <?php include get_theme_file_path("templates/partials/instagram-panel.php"); ?>    
   <!-- end: Instagram Panel -->
+
+   <!-- Gallery -->
+   <?php include get_theme_file_path("templates/partials/gallery.php"); ?>    
+  <!-- end: Gallery -->
 
 </div>
 

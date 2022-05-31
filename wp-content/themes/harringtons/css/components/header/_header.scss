@@ -4,7 +4,7 @@
   justify-content: space-between;
   height: var(--header-height);
   left: 0;
-  padding: 0 var(--header-padding-mobile);
+  padding: 0 var(--header-padding);
   position: absolute;
   top: 0;
   transition: all .3s ease-in-out;
@@ -15,18 +15,11 @@
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    padding-right: var(--header-padding-tablet);
-    padding-left: var(--header-padding-tablet);
   }
 
   @include mq(desktop) {
     align-items: center;
     flex-direction: row;
-  }
-
-  @include mq(desktop-lg) {
-    padding-right: var(--header-padding-desktop-lg);
-    padding-left: var(--header-padding-desktop-lg);
   }
 
   &--sticky {
@@ -41,6 +34,10 @@
     width: 200px;
 
     @include mq(tablet) {
+      width: 200px;
+    }
+
+    @include mq(desktop) {
       width: 250px;
     }
 
@@ -71,10 +68,10 @@
   border-top: 2px solid var(--mobile-nav-colour);
   margin-top: auto;
   padding: inc_to_rem(3) 0;
-  margin: auto var(--mobile-nav-padding) 0;
+  margin: auto var(--nav-padding) 0;
 
   @include mq(tablet) {
-    margin: auto var(--tablet-nav-padding) 0;
+    margin: auto var(--nav-padding) 0;
     padding: inc_to_rem(3) 0 inc_to_rem(5);
   }
 
@@ -88,30 +85,37 @@
 
   P {
     color: var(--mobile-nav-colour);
+    display: flex;
+    flex-direction: column;
     font-size: 14px;
     margin-bottom: inc_to_rem(2);
 
     @include mq(tablet) {
+      align-items: center;
       font-size: inc_to_rem(2);
       margin-bottom: inc_to_rem(3);
     }
 
     @include mq(tablet-lg) {
+      flex-direction: row-reverse;
+      font-size: 14px;
       margin: 0;
       position: absolute;
       text-align: right;
-      top: 20px;
+      top: 25px;
     }
 
     @include mq(desktop) {
+      align-items: flex-end;
+      flex-direction: column;
       font-size: 16px;
-      margin-right: inc_to_rem(2);
+      margin-right: inc_to_rem(3);
       position: relative;
       top: auto;
     }
 
-    @include mq(desktop-md) {      
-      margin-right: inc_to_rem(3);
+    @include mq(desktop-md) {
+      margin-right: inc_to_rem(4);
     }
 
     strong {
@@ -124,12 +128,15 @@
       }
 
       @include mq(tablet-lg) {
-        font-size: inc_to_rem(3);
-        margin-bottom: 4px;
+        display: inline-block;
+        font-size: 26px;
+        margin: 0 0 0 inc_to_rem(2);
       }
 
       @include mq(desktop) {
-        margin-bottom: inc_to_rem(1);
+        display: block;
+        font-size: inc_to_rem(3);
+        margin: 0 0 inc_to_rem(1);
       }
 
     }

@@ -30,26 +30,28 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import './components/menu-panel/_menu-panel';
 @import './components/gallery/_gallery';
 @import './components/functions-panel/_functions-panel';
+@import './components/full-width-image/_full-width-image';
 @import './components/instagram-panel/_instagram-panel';
 
 :root {
   
   //== Colours
+
   --white: #fff;
-  // --darkGrey: #272727;
   --darkGrey: #1e1e1e;
   --lightGrey: #FAFAFA;
   --green: #6B7963;
   --rating-green: #00AA6C;
 
   //== General
+
   --body-bg: var(--lightGrey);
   --border-radius: 4px;
   --max-content-width-tablet: 992px;
-  --max-content-width-tablet-lg: 1200px; 
-  --max-content-width-desktop: 1412px;
+  
   
   //== Type
+
   --font: 'Jost', sans-serif;
   --font-light: 300;
   --font-regular: 400;
@@ -59,54 +61,75 @@ Use it to make something cool, have fun, and share what you've learned with othe
   --font-colour: var(--darkGrey);
   --text-link-colour: var(--darkGrey);
   --text-link-hover-colour: var(--green);
+  --sub-title-font-size: 22px;
+  --sub-title-line-height: 36px;
+
 
   //== Buttons
+
   --btn-primary-bg: var(--green);
   --btn-primary-colour: var(--white);
-
   --btn-secondary-border: 2px solid var(--white);
   --btn-secondary-colour: var(--white);
   --btn-secondary-hover-bg: var(--white);
   --btn-secondary-hover-colour: var(--darkGrey);
 
+
   //== Header  
+
   --header-bg: var(--darkGrey);
   --header-height: 80px;
-  // --header-height-mobile: 80px;
-  // --header-height-tablet: 150px;
-  --header-padding-mobile: 20px;
-  --header-padding-tablet: 40px;
-  --header-padding-desktop-lg: 60px; 
+  --header-padding: 20px;  
 
 
   //== Nav
+
   --mobile-nav-bg: var(--darkGrey);
   --nav-link-colour: var(--white);
   --mobile-nav-colour: var(--white);
   --mobile-close-colour: var(--white);
   --mobile-nav-mask: rgba(0,0,0,0.9);
-  --mobile-nav-padding: 40px;
-  --tablet-nav-padding: 60px;  
+  --nav-padding: 40px;
 
 
   //== Footer
+
   --footer-bg: var(--darkGrey);
   --footer-colour: var(--white);
   --footer-link-colour: var(--white);
   --footer-hr-colour: var(--white);
+  --footer-col-width: 360px;
 
 
   //== Panels
+
   --panel-bg: var(--white);
   --panel-box-shadow: 0 10px 30px rgba(0,0,0,.05);
+  --panel-padding: calc(9px * 4) calc(9px * 3);
+  
+
+
+  //== Blocks
+
+  --block-padding: calc(9px * 5);
 
 
   //== Hero
-  --hero-height-mobile: 500px;
-  --hero-height-tablet: 650px;
-  --hero-height-desktop: 50vw;
-  --hero-max-height: 1000px;
 
+  --hero-height: 500px;
+  --hero-max-height: 1000px;
+  
+}
+
+
+//== Tablet
+
+@include mq(tablet) {
+  :root {
+    --nav-padding: 60px;
+    --hero-height: 650px;
+    --block-padding: calc(9px * 7);
+  }
 }
 
 
@@ -114,7 +137,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @include mq(tablet-lg) {
   :root {
-    --header-height: 175px;
+    --header-height: 140px;
+    --header-padding: 40px;
+    --max-content-width: 1200px;
+    --panel-padding: calc(9px * 4);
+    --block-padding: calc(9px * 8);
   }
 }
 
@@ -124,8 +151,36 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @include mq(desktop) {
   :root {
     --header-height: 150px;
+    --max-content-width: 1412px;
+    --hero-height: 50vw;
+    --panel-padding: calc(9px * 5) calc(9px * 4);
+    --block-padding: calc(9px * 12);
   }
 }
+
+
+//== Medium Desktop
+
+@include mq(desktop-md) {
+  :root {
+    --block-padding: calc(12px * 12);
+    --panel-padding: calc(9px * 6) calc(9px * 5);
+  }
+}
+
+
+//== Large Desktop
+
+@include mq(desktop-lg) {
+  :root {
+    --max-content-width: 1600px;
+    --header-padding: 60px; 
+    --footer-col-width: 400px;
+  }
+}
+
+
+
 
 html, body {
   height: 100%;
@@ -178,7 +233,7 @@ p {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: var(--max-content-width-tablet);
+  max-width: var(--max-content-width);
   padding: 0 inc_to_rem(2);
   position: relative;
   z-index: 1;
@@ -188,12 +243,7 @@ p {
   }
 
   @include mq(tablet-lg) {
-    max-width: var(--max-content-width-tablet-lg);
     padding: 0 inc_to_rem(4);
-  }
-
-  @include mq(desktop) {
-    max-width: var(--max-content-width-desktop);
   }
 
 }

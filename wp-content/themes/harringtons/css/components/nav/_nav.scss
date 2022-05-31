@@ -25,7 +25,7 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: inc_to_rem(2);
+    margin-top: inc_to_rem(1);
     width: 100%;
   }
 
@@ -42,11 +42,11 @@
   }
 
   &__logo {
-    margin: 30px 0 20px var(--mobile-nav-padding);
+    margin: 30px 0 20px var(--nav-padding);
     width: 175px;
 
     @include mq(tablet) {
-      margin: 50px 0 40px var(--tablet-nav-padding);
+      margin: 50px 0 40px var(--nav-padding);
       width: 250px;
     }
 
@@ -166,13 +166,13 @@
   &__link {
     color: var(--nav-link-colour);
     display: block;
-    padding: 20px 0 20px var(--mobile-nav-padding);
+    padding: 20px 0 20px var(--nav-padding);
     position: relative;
     text-decoration: none;
     transition: all .2s ease-in-out;
 
     @include mq(tablet) {
-      padding: 25px 0 25px var(--tablet-nav-padding);
+      padding: 25px 0 25px var(--nav-padding);
     }
 
     @include mq(tablet-lg) {
@@ -188,7 +188,7 @@
       content: '';
       height: 3px;
       bottom: 10px;
-      left: var(--mobile-nav-padding);
+      left: var(--nav-padding);
       opacity: 0;
       pointer-events: none;
       position: absolute;
@@ -196,12 +196,12 @@
 
       @include mq(tablet) {
         height: 4px;
-        left: var(--tablet-nav-padding);
+        left: var(--nav-padding);
       }
     
       @include mq(tablet-lg) {
         height: 3px;
-        bottom: -17px;
+        bottom: -10px;
         left: 0;
         width: 100%;
       }

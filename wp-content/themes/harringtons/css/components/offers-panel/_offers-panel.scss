@@ -1,24 +1,78 @@
 .offers-panel {
-  padding: inc_to_rem(5) 0;
+  padding: var(--block-padding) 0;
 
   &__title {
-    font-size: inc_to_rem(4);
-    font-weight: var(--font-bold);
-    line-height: inc_to_rem(6);
-    margin-bottom: inc_to_rem(3);
+    @include blockTitle;
     text-align: center;
   }
 
 }
 
-.offers { margin-bottom: inc_to_rem(2); }
+.offers {
+  margin-top: inc_to_rem(2);
+  margin-bottom: inc_to_rem(4);
+
+  @include mq(tablet-lg) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: inc_to_rem(4);
+    margin-bottom: inc_to_rem(6);
+  }
+
+  @include mq(desktop) {
+    margin-top: inc_to_rem(6);
+    margin-bottom: inc_to_rem(7);
+  }
+
+  @include mq(desktop-md) {
+    margin-bottom: inc_to_rem(9);
+  }
+
+}
 
 .offer {
-  @include smallPanel;
+  @include smallPanel(false);
   margin-bottom: inc_to_rem(2);
 
+  @include mq(tablet) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @include mq(tablet-lg) {
+    flex-direction: column;
+    margin: 0;
+    width: calc(100% / 3 - 16px);
+  }
+  
+  @include mq(desktop) {
+    width: calc(100% / 3 - 32px);
+  }
+
+  &:last-child { margin-bottom: 0; }
+
   &__img {
-    margin: (-(inc_to_rem(4))) (-(inc_to_rem(3))) inc_to_rem(3);
+
+    @include mq(tablet) {
+      width: 250px;
+    }
+
+    @include mq(tablet-lg) {
+      width: 100%;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+  }
+
+  &__content {
+    flex: 1;
+    padding: var(--panel-padding);
   }
 
   &__title {
@@ -26,11 +80,28 @@
     font-weight: var(--font-bold);
     line-height: inc_to_rem(4);
     margin-bottom: inc_to_rem(1);
+
+    @include mq(tablet-lg) {
+      font-size: var(--sub-title-font-size);
+      line-height: var(--sub-title-line-height);
+    }
+
+    @include mq(desktop) {
+      font-size: inc_to_rem(3);
+      line-height: inc_to_rem(4);
+      margin-bottom: inc_to_rem(2);
+    }
+
   }
 
-  &__content {
+  &__body {
     font-size: inc_to_rem(2);
     line-height: inc_to_rem(3);
+
+    @include mq(desktop) {
+      line-height: inc_to_rem(4);
+    }
+
   }
 
 }

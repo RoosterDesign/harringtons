@@ -2,17 +2,12 @@
   background-color: var(--darkGrey);
   color: var(--white);
   display: flex;
-  height: var(--hero-height-mobile);
+  height: var(--hero-height);
   padding-top: var(--header-height);
   position: relative;
   text-align: center;
 
-  @include mq(tablet) {
-    height: var(--hero-height-tablet);
-  }
-
   @include mq(desktop) {
-    height: var(--hero-height-desktop);
     max-height: var(--hero-max-height);
   }
 
@@ -41,16 +36,11 @@
     }
 
     @include mq(desktop) {
-      font-size: inc_to_rem(8);
-      margin-bottom: inc_to_rem(3);
-    }
-
-    @include mq(desktop-md) {
       font-size: inc_to_rem(10);
       margin-bottom: inc_to_rem(5);
     }
 
-    @include mq(full) {
+    @include mq(desktop-lg) {
       font-size: inc_to_rem(12);
       margin-bottom: inc_to_rem(7);
     }
@@ -66,12 +56,17 @@
       line-height: inc_to_rem(5);
     }
 
+    @include mq(desktop) {
+      font-size: inc_to_rem(4);
+      line-height: inc_to_rem(6);
+    }
+
     @include mq(desktop-md) {
       font-size: inc_to_rem(4);
       line-height: inc_to_rem(6);
     }
 
-    @include mq(full) {
+    @include mq(desktop-lg) {
       font-size: inc_to_rem(5);
       line-height: inc_to_rem(7);
     }
@@ -91,10 +86,14 @@
     margin-top: inc_to_rem(3);
 
     @include mq(tablet) {
+      font-size: 20px;
       margin-top: inc_to_rem(4);
+      padding: inc_to_rem(3) inc_to_rem(4);
     }
 
     @include mq(desktop-md) {
+      font-size: inc_to_rem(3);
+      padding: inc_to_rem(3) inc_to_rem(4);
       margin-top: inc_to_rem(5);
     }
 

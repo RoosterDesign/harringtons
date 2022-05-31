@@ -1,18 +1,26 @@
 .reservation-panel {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--white);
-  padding: inc_to_rem(4) 0;
+  padding: var(--block-padding) 0;
   position: relative;
 
-  @include mq(tablet) {
-    padding: inc_to_rem(6) 0;
-  }
-
   @include mq(tablet-lg) {
-    padding: inc_to_rem(12) 0;
+    padding: inc_to_rem(15) 0;
   }
 
   @include mq(desktop) {
     padding: inc_to_rem(20) 0;
+  }
+
+  @include mq(desktop-md) {
+    padding: inc_to_rem(30) 0;
+  }
+
+  @include mq(desktop-lg) {
+    padding: inc_to_rem(30) 0;
   }
 
   .container {
@@ -25,8 +33,11 @@
   }
 
   &__inner {
-    padding-right: 30px;
-    width: 375px;
+
+    @include mq(tablet) {
+      padding-right: 30px;
+      width: 375px;
+    }
 
     @include mq(tablet-lg) {
       width: 500px;
@@ -61,21 +72,7 @@
   }
 
   &__title {
-    font-size: inc_to_rem(4);
-    font-weight: var(--font-bold);
-    line-height: inc_to_rem(5);
-    margin-bottom: inc_to_rem(2);
-
-    @include mq(tablet-lg) {
-      font-size: inc_to_rem(5);
-      line-height: inc_to_rem(6);
-    }
-
-    @include mq(desktop) {
-      font-size: inc_to_rem(7);
-      line-height: inc_to_rem(8);
-      margin-bottom: inc_to_rem(3);
-    }
+    @include blockTitle;
 
     br {
       
@@ -118,15 +115,6 @@
 
     }
 
-  }
-
-  &__bg {
-    height: 100%;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: 100%;
   }
 
 }

@@ -59,20 +59,15 @@ $breakpoints: (mobile-lg: 375px,
 
 //== Small Panel
 
-@mixin smallPanel() {
+@mixin smallPanel($hasPadding: true ) {
     background: var(--panel-bg);
     border-radius: var(--border-radius);
     color: var(--font-colour);
     box-shadow: var(--panel-box-shadow);
     overflow: hidden;
-    padding: inc_to_rem(4) inc_to_rem(3);
 
-    @include mq(tablet-lg) {
-        padding: inc_to_rem(5) inc_to_rem(4);
-    }
-
-    @include mq(desktop) {
-        padding: inc_to_rem(6) inc_to_rem(6);
+    @if $hasPadding {
+        padding: var(--panel-padding);
     }
 
 }
@@ -83,4 +78,53 @@ $breakpoints: (mobile-lg: 375px,
 $base-unit: 9;
 @function inc_to_rem($increment) {
     @return 0rem + ($increment * $base-unit) / 10;
+}
+
+
+
+//== Block Title
+
+@mixin blockTitle() {
+    font-size: inc_to_rem(4);
+    font-weight: var(--font-bold);
+    line-height: inc_to_rem(5);
+    margin-bottom: inc_to_rem(2);
+
+    @include mq(tablet-lg) {
+      font-size: inc_to_rem(5);
+      margin-bottom: inc_to_rem(3);
+    }
+
+    @include mq(desktop) {
+      font-size: inc_to_rem(7);
+      margin-bottom: inc_to_rem(4);
+    }
+}
+
+//== Block Intro
+
+@mixin blockIntro() {
+    font-size: inc_to_rem(2);
+    line-height: inc_to_rem(3);
+    margin: 0 auto inc_to_rem(4);
+    
+    @include mq(tablet) {
+      margin-bottom: inc_to_rem(4);
+    }
+
+    @include mq(tablet-lg) {
+        max-width: 800px;
+    }
+
+    @include mq(desktop) {
+      font-size: inc_to_rem(3);
+      line-height: inc_to_rem(5);
+      margin-bottom: inc_to_rem(6);
+      max-width: 970px;
+    }
+
+    a {
+        @include textLink;
+    }
+    
 }
