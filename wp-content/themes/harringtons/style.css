@@ -1842,6 +1842,41 @@ body.home .site-header {
   z-index: 2;
 }
 
+.hero__title, .hero__intro {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: fadeInUpText;
+          animation-name: fadeInUpText;
+  opacity: 0;
+  position: relative;
+}
+
+@-webkit-keyframes fadeInUpText {
+  from {
+    opacity: 0;
+    bottom: -30px;
+  }
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+@keyframes fadeInUpText {
+  from {
+    opacity: 0;
+    bottom: -30px;
+  }
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
 .hero__title {
   font-size: 4.5rem;
   font-weight: var(--font-bold);
@@ -1915,7 +1950,16 @@ body.home .site-header {
 }
 
 .hero__btn {
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: fadeInButton;
+          animation-name: fadeInButton;
   margin-top: 2.7rem;
+  opacity: 0;
 }
 
 @media (min-width: 768px) {
@@ -1970,6 +2014,24 @@ body.home .site-header {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+}
+
+@-webkit-keyframes fadeInButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .mouse_scroll {
@@ -2390,20 +2452,20 @@ body.home .site-header {
 }
 
 @media (min-width: 768px) {
-  .reservation-panel__inner {
+  .reservation-panel__content {
     padding-right: 30px;
     width: 375px;
   }
 }
 
 @media (min-width: 992px) {
-  .reservation-panel__inner {
+  .reservation-panel__content {
     width: 500px;
   }
 }
 
 @media (min-width: 1366px) {
-  .reservation-panel__inner {
+  .reservation-panel__content {
     width: 650px;
   }
 }
@@ -2462,14 +2524,14 @@ body.home .site-header {
   }
 }
 
-.reservation-panel__content {
+.reservation-panel__body {
   font-size: 1.8rem;
   line-height: 2.7rem;
   margin-bottom: 2.7rem;
 }
 
 @media (min-width: 1366px) {
-  .reservation-panel__content {
+  .reservation-panel__body {
     font-size: 2.7rem;
     line-height: 4.5rem;
     margin-bottom: 3.6rem;
@@ -3297,6 +3359,183 @@ body.home .site-header {
   }
 }
 
+.square-row {
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .square-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width: 1366px) {
+  .square-row {
+    min-height: 50vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .square-row {
+    min-height: 1000px;
+  }
+}
+
+.square-row .container {
+  position: unset;
+}
+
+@media (min-width: 992px) {
+  .square-row .container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (min-width: 992px) {
+  .square-row--reverse .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 992px) {
+  .square-row--reverse .square-text {
+    padding: 7.2rem 0 7.2rem 5.4rem;
+  }
+}
+
+@media (min-width: 1366px) {
+  .square-row--reverse .square-text {
+    padding-left: 9rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .square-row--reverse .square-text {
+    padding-left: 13.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .square-row--reverse .square-image {
+    left: 0;
+    right: auto;
+  }
+}
+
+.square-text {
+  padding: 3.6rem 0;
+}
+
+@media (min-width: 768px) {
+  .square-text {
+    padding: 5.4rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .square-text {
+    padding: 7.2rem 5.4rem 7.2rem 0;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1366px) {
+  .square-text {
+    padding-right: 9rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .square-text {
+    padding-right: 13.5rem;
+  }
+}
+
+.square-text__title {
+  font-size: 3.6rem;
+  font-weight: var(--font-bold);
+  line-height: 4.5rem;
+  margin-bottom: 1.8rem;
+}
+
+@media (min-width: 1366px) {
+  .square-text__title {
+    font-size: 4.5rem;
+    line-height: 5.4rem;
+    margin-bottom: 2.7rem;
+  }
+}
+
+.square-text p {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  margin-bottom: 2.7rem;
+}
+
+@media (min-width: 1366px) {
+  .square-text p {
+    line-height: 3.6rem;
+    margin-bottom: 3.6rem;
+  }
+}
+
+.square-text p:last-child {
+  margin-bottom: 0;
+}
+
+.square-text p a {
+  border-bottom: 2px solid var(--text-link-colour);
+  color: var(--text-link-colour);
+  font-weight: var(--font-bold);
+  text-decoration: none;
+  -webkit-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+
+.square-text p a:hover {
+  color: var(--text-link-hover-colour);
+}
+
+.square-image {
+  margin: 0.9rem -1.8rem 0;
+}
+
+@media (min-width: 768px) {
+  .square-image {
+    margin: 2.7rem -2.7rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .square-image {
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+  }
+}
+
+.square-image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
 :root {
   --white: #fff;
   --darkGrey: #1e1e1e;
@@ -3476,6 +3715,33 @@ p {
 @media (min-width: 992px) {
   .container {
     padding: 0 3.6rem;
+  }
+}
+
+.animate {
+  opacity: 0;
+  position: relative;
+}
+
+.animate--in-view {
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: fadeInUpText;
+          animation-name: fadeInUpText;
+}
+
+@keyframes fadeInUpText {
+  from {
+    opacity: 0;
+    bottom: -30px;
+  }
+  to {
+    opacity: 1;
+    bottom: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

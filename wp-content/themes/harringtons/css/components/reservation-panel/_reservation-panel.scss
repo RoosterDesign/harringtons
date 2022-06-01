@@ -35,7 +35,7 @@
 
   }
 
-  &__inner {
+  &__content {
 
     @include mq(tablet) {
       padding-right: 30px;
@@ -85,7 +85,7 @@
 
   }
 
-  &__content {
+  &__body {
     font-size: inc_to_rem(2);
     line-height: inc_to_rem(3);
     margin-bottom: inc_to_rem(3);

@@ -11,6 +11,7 @@ function sitckyHeader(scrollY) {
   }
 
 }
+
 window.onscroll = function (e) {
   sitckyHeader(window.scrollY);
 };
@@ -27,9 +28,6 @@ $(".hero .owl-carousel").owlCarousel({
   touchDrag: false,
   autoplayTimeout: 4000
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-
 
 
 //== Mobile Nav toggle
@@ -49,7 +47,23 @@ function mobileNavToggle() {
 
 };
 
-mobileNavToggle();
+
+//== Waypoints 
+
+let elements = document.querySelectorAll('.animate');
+for (let i = 0; i < elements.length; i++) {
+  let waypoint = new Waypoint({
+    element: elements[i],
+    handler: function() {
+      this.element.classList.add('animate--in-view');
+    },
+    offset: "75%"
+  })  
+};
+
   
-  
+//== On Document Load
+
+document.addEventListener("DOMContentLoaded", function() {
+  mobileNavToggle();
 });

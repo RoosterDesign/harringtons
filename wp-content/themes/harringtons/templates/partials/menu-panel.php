@@ -16,7 +16,7 @@
 
 <section class="menu-panel">
   <div class="container">
-    <div class="menu-panel__content">
+    <div class="menu-panel__content animate">
       <h1 class="menu-panel__title">Menus</h1>
       <p class="menu-panel__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada mi augue, in varius lorem imperdiet nec. Donec orci augue, volutpat vitae purus quis, ultricies rutrum ex. Nulla sit amet est auctor purus tempor molestie. Curabitur a tellus leo.</p>
       <a href="" title="" class="btn btn--secondary">View our menus</a>

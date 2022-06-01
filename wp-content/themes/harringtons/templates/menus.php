@@ -12,7 +12,7 @@ Template Name: Menus
   <!-- end: Masthead -->
 
   <!-- Menus List -->
-  <?php include get_theme_file_path("templates/partials/menus-list.php"); ?>    
+  <?php include get_theme_file_path("templates/partials/menus-list.php"); ?>
   <!-- end: Menus List -->
 
   <!-- Reservation Panel -->

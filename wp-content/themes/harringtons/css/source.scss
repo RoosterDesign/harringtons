@@ -34,7 +34,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import './components/instagram-panel/_instagram-panel';
 @import './components/masthead/_masthead';
 @import './components/menu-list/_menu-list';
+@import './components/menu-item/_menu-item';
 @import './components/resdiary/_resdiary';
+@import './components/squares/_squares';
 
 :root {
   
@@ -265,6 +267,17 @@ p {
 
   @include mq(tablet-lg) {
     padding: 0 inc_to_rem(4);
+  }
+
+}
+
+
+.animate {
+  opacity: 0;
+  position: relative;
+
+  &--in-view {
+    @include fadeInUpText;
   }
 
 }

@@ -30,6 +30,10 @@ function harringtons_scripts() {
 	/* jQuery */
 	wp_enqueue_script( 'harringtons-jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), _S_VERSION, true );
 
+
+	/* Waypoints */
+	wp_enqueue_script( 'harringtons-waypoints', get_template_directory_uri() . '/js/vendor/waypoints.min.js', array(), _S_VERSION, true );
+
 	
 	/* Owl Carousel */
 	wp_enqueue_script( 'harringtons-owlcarousel', get_template_directory_uri() . '/js/vendor/owl-carousel.js', array('harringtons-jquery'), null, true );
