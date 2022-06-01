@@ -12,12 +12,7 @@
         $ratingClass =  str_replace('.', '-', get_field('rating')); ?>
 
     <article class="review">
-      <span class="review-rating review-rating--rating<?php echo($ratingClass); ?>">   
-        <?php /*
-        $rating = round(get_field('rating'), 0);
-        for ( $i = 0; $i < $rating; $i++) : ?>
-          <span class="review-rating__dot"></span>
-        <?php endfor; */ ?>        
+      <span class="review-rating review-rating--rating<?php echo($ratingClass); ?>">      
         <span class="review-rating__dot"></span>
         <span class="review-rating__dot"></span>
         <span class="review-rating__dot"></span>
@@ -28,8 +23,7 @@
       <p class="review__excerpt">
         <?php remove_filter ('the_content', 'wpautop'); ?>
         <?php the_content(); ?>
-      </p>           
-      <?php /* echo wp_trim_words(get_the_content(), 500, "..."); */ ?>
+      </p>
       <p class="review__author"><?php the_field('review_author'); ?></p>
     </article>
     <?php endwhile; wp_reset_postdata(); ?>

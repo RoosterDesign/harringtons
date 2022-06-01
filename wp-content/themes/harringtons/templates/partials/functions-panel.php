@@ -1,54 +1,55 @@
-<section class="functions-panel">
-  <div class="container">
-    <h1 class="functions-panel__title">Functions, Events and Weddings</h1>
-    <p class="functions-panel__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada mi augue, in varius lorem imperdiet nec. Donec orci augue, volutpat vitae purus quis, ultricies rutrum ex. Nulla sit amet est auctor purus tempor molestie. Curabitur a tellus leo.</p>
-    <div class="functions-panel-gallery">
-      <picture>
-        <source
-          srcset="https://picsum.photos/1920"
-          media="(min-width: 1024px)"
-        >
-        <source
-          srcset="https://picsum.photos/768"
-          media="(min-width: 768px)"
-        >
-        <img
-          src="https://picsum.photos/375"
-          alt=""
-          class="functions-panel-gallery__img"
-        />
-      </picture> 
-      <picture>
-        <source
-          srcset="https://picsum.photos/1920"
-          media="(min-width: 1024px)"
-        >
-        <source
-          srcset="https://picsum.photos/768"
-          media="(min-width: 768px)"
-        >
-        <img
-          src="https://picsum.photos/375"
-          alt=""
-          class="functions-panel-gallery__img"
-        />
-      </picture> 
-      <picture>
-        <source
-          srcset="https://picsum.photos/1920"
-          media="(min-width: 1024px)"
-        >
-        <source
-          srcset="https://picsum.photos/768"
-          media="(min-width: 768px)"
-        >
-        <img
-          src="https://picsum.photos/375"
-          alt=""
-          class="functions-panel-gallery__img"
-        />
-      </picture> 
+<?php $args = array('p' => 113, 'post_type' => 'content-blocks'); $the_query = new WP_Query( $args );  ?>
+<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+  <section class="functions-panel">
+    <div class="container">
+      <h1 class="functions-panel__title"><?php the_field('title'); ?></h1>
+      <p class="functions-panel__body"><?php the_field('body'); ?></p>
+
+      <div class="functions-panel-gallery">
+
+        <?php $image = get_field('image_1');
+          if( $image ):
+            $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
+            $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
+        ?>
+
+        <picture class="functions-panel-gallery__img">
+          <source srcset="<?php echo $tabletImage; ?>" media="(min-width: 1800px)">
+          <img src="<?php echo $mobileImage; ?>" alt="Harringtons on the Hill" />
+        </picture> 
+
+        <?php endif; $image = null; ?>
+      
+        <?php $image = get_field('image_2');
+          if( $image ):
+            $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
+            $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
+        ?>
+
+        <picture class="functions-panel-gallery__img">
+          <source srcset="<?php echo $tabletImage; ?>" media="(min-width: 1800px)">
+          <img src="<?php echo $mobileImage; ?>" alt="Harringtons on the Hill" />
+        </picture>
+          
+        <?php endif; $image = null; ?>
+
+        <?php $image = get_field('image_3');
+          if( $image ):
+            $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
+            $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
+        ?>
+
+        <picture class="functions-panel-gallery__img">
+          <source srcset="<?php echo $tabletImage; ?>" media="(min-width: 1800px)">
+          <img src="<?php echo $mobileImage; ?>" alt="Harringtons on the Hill" />
+        </picture>
+
+        <?php endif; $image = null; ?>
+
+      </div>
+      <a href="<?php the_field('button_link') ?>" title="<?php the_field('button_text') ?>" class="btn btn--primary"><?php the_field('button_text') ?></a>
     </div>
-    <a href="" title="" class="btn btn--primary">Find out more</a>
-  </div>
-</section>
+  </section>
+
+<?php endwhile; wp_reset_postdata(); endif; ?>

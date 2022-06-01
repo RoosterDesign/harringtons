@@ -4,13 +4,13 @@
   if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 <?php
-    $image = get_field('image');
-    if( $image ):
-      $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
-      $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
-      $desktopImage = $image['sizes'][ 'fw-img-desktop' ];
-      $desktopLgImage = $image['sizes'][ 'fw-img-desktop-lg' ];
-  ?>
+  $image = get_field('image');
+  if( $image ):
+    $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
+    $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
+    $desktopImage = $image['sizes'][ 'fw-img-desktop' ];
+    $desktopLgImage = $image['sizes'][ 'fw-img-desktop-lg' ];
+?>
 
   <style>
     .menu-panel { background-image: url("<?php echo $mobileImage; ?>"); }

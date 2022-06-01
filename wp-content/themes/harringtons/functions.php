@@ -139,6 +139,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 	add_image_size( 'fw-img-tablet', 1024, 1024, true );
 	add_image_size( 'fw-img-desktop', 1920, 1920, true );
 	add_image_size( 'fw-img-desktop-lg', 2560, 2560, true );
+	add_image_size( 'offer', 480, 330, true );
 }
 
 

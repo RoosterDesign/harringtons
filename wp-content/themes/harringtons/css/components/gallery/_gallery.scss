@@ -5,11 +5,15 @@
   }
 
   &__img {
-    flex: 1; 
+    display: flex;
+    @include mq(tablet) {
+      aspect-ratio: 1 / 1;
+      flex: 1;
+    }
 
     img {
-      display: block;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       width: 100%;
     }
 
