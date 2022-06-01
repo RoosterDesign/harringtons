@@ -1,7 +1,7 @@
 <section class="functions-panel">
   <div class="container">
     <h1 class="functions-panel__title">Functions, Events and Weddings</h1>
-    <p class="functions-panel__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada mi augue, in varius lorem imperdiet nec. Donec orci augue, volutpat vitae purus quis, ultricies rutrum ex. Nulla sit amet est auctor purus tempor molestie. Curabitur a tellus leo.</p>
+    <p class="functions-panel__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada mi augue, in varius lorem imperdiet nec. Donec orci augue, volutpat vitae purus quis, ultricies rutrum ex. Nulla sit amet est auctor purus tempor molestie. Curabitur a tellus leo.</p>
     <div class="functions-panel-gallery">
       <picture>
         <source

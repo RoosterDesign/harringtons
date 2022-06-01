@@ -43,10 +43,6 @@ Template Name: Homepage
   <?php include get_theme_file_path("templates/partials/instagram-panel.php"); ?>    
   <!-- end: Instagram Panel -->
 
-   <!-- Gallery -->
-   <?php include get_theme_file_path("templates/partials/gallery.php"); ?>    
-  <!-- end: Gallery -->
-
 </div>
 
 <?php get_footer(); ?>

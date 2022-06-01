@@ -6,6 +6,11 @@
     text-align: center;
   }
 
+  &__body {
+    @include blockIntro;
+    text-align: center;
+  }
+
 }
 
 .offers {  

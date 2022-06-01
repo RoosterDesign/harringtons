@@ -5,9 +5,14 @@
   }
 
   &__img {
-    display: block;
-    height: auto;
-    width: 100%;
+    flex: 1; 
+
+    img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+
   }
 
 }

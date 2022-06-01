@@ -31,9 +31,9 @@ Template Name: Functions
   <?php include get_theme_file_path("templates/partials/menus-list.php"); ?>
   <!-- end: Menus -->
 
-  <!-- Full Width Image -->
-  <?php include get_theme_file_path("templates/partials/full-width-image.php"); ?>    
-  <!-- end: Full Width Image -->
+  <!-- Reservation Panel -->
+  <?php include get_theme_file_path("templates/partials/reservations-panel.php"); ?>    
+  <!-- end: Reservation Panel -->
 
 </div>
 

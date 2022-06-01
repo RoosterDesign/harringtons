@@ -115,7 +115,7 @@
     order: 1;
   }
 
-  &__item {
+  .menu-item {
     font-size: inc_to_rem(2);
 
     @include mq(tablet) {
@@ -137,9 +137,9 @@
 
   }
 
-  &__item--current {
+  .current-menu-item {
   
-    .nav-list__link {
+    a {
       font-weight: var(--font-bold);
       position: relative;
 
@@ -152,7 +152,7 @@
         opacity: 1;
 
         @include mq(desktop) {
-          bottom: -10px;
+          bottom: -15px;
         }
 
       }
@@ -163,7 +163,7 @@
 
   }
 
-  &__link {
+  a {
     color: var(--nav-link-colour);
     display: block;
     padding: 20px 0 20px var(--nav-padding);
@@ -181,8 +181,8 @@
     }
 
     &:after {
-      animation-name: fadeNavOut;
-      animation-duration: .3s;
+      // animation-name: fadeNavOut;
+      // animation-duration: .3s;
       background: var(--nav-link-colour);
       border-radius: 2px;
       content: '';
@@ -218,13 +218,13 @@
         opacity: 1;
       }
 
-      &:after {
-        @include mq(tablet-lg) {
-          animation-name: fadeNavIn;
-          animation-duration: .3s;
-          animation-fill-mode: forwards;
-        }
-      }
+      // &:after {
+      //   @include mq(tablet-lg) {
+      //     animation-name: fadeNavIn;
+      //     animation-duration: .3s;
+      //     animation-fill-mode: forwards;
+      //   }
+      // }
 
     }
 

@@ -1,26 +1,40 @@
-<?php
-  $mobileImage = 'https://picsum.photos/375/900';
-  $tabletImage = 'https://picsum.photos/768/1024';
-  $desktopImage = 'https://picsum.photos/1920/1080';
-?>
+<?php $args = array('p' => 44, 'post_type' => 'content-blocks'); $the_query = new WP_Query( $args );  ?>
+<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-<style>
-  .reservation-panel { background-image: url("<?php echo $mobileImage; ?>"); }
-  @media only screen and (min-width: 768px) {
-    .reservation-panel { background-image: url("<?php echo $tabletImage; ?>"); }
-  }
-  @media only screen and (min-width: 1024px) {
-    .reservation-panel { background-image: url("<?php echo $desktopImage; ?>"); }
-  }
-</style>
 
-<section class="reservation-panel">
-  <div class="container">
-  <div class="resdiary">RESDIARY EMBED</div>
-    <div class="reservation-panel__content animate">      
-      <h1 class="reservation-panel__title">Book a table<br/> with us</h1>
-      <p class="reservation-panel__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada mi augue, in varius lorem imperdiet nec. Donec orci augue, volutpat vitae purus quis, ultricies rutrum ex. Nulla sit amet est auctor purus tempor molestie. Curabitur a tellus leo.</p>
-      <p class="reservation-panel__tel">Book online or call<br/> 01926 852 074</p>
+  <?php
+    $image = get_field('image');
+    if( $image ):
+      $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
+      $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
+      $desktopImage = $image['sizes'][ 'fw-img-desktop' ];
+      $desktopLgImage = $image['sizes'][ 'fw-img-desktop-lg' ];
+  ?>
+
+  <style>
+    .reservation-panel { background-image: url("<?php echo $mobileImage; ?>"); }
+    @media only screen and (min-width: 768px) {
+      .reservation-panel { background-image: url("<?php echo $tabletImage; ?>"); }
+    }
+    @media only screen and (min-width: 1024px) {
+      .reservation-panel { background-image: url("<?php echo $desktopImage; ?>"); }
+    }
+    @media only screen and (min-width: 2560px) {
+      .reservation-panel { background-image: url("<?php echo $desktopLgImage; ?>"); }
+    }
+  </style>
+
+  <section class="reservation-panel">
+    <div class="container">
+    <div class="resdiary">
+      <?php echo get_option('resdiary_embed'); ?>
     </div>
-  </div>
-</section>
+      <div class="reservation-panel__content animate">      
+        <h1 class="reservation-panel__title"><?php the_field('title'); ?></h1>
+        <p class="reservation-panel__body"><?php the_field('body'); ?></p>
+        <p class="reservation-panel__tel"><?php the_field('contact'); ?></p>
+      </div>
+    </div>
+  </section>
+
+<?php endif; endwhile; wp_reset_postdata(); endif; $image = null; ?>

@@ -9,7 +9,7 @@
 
 
 function responsiveCarousel() {
-  let breakPoint = 992;
+  let breakPoint = 1366;
   let checkWidth = window.innerWidth;
   let owlCarousel = $(".reviews-panel .container");
 
@@ -23,7 +23,11 @@ function responsiveCarousel() {
         },
         768 : {
           items: 2,
-          margin: 20
+          margin: 30
+        },
+        992 : {
+          items: 2,
+          margin: 40
         }
       }
     });
