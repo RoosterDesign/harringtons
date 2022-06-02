@@ -108,6 +108,36 @@ function create_posttype() {
 			)
 	);
 
+	register_post_type( 'home-hero-slides',
+			array(
+					'labels' => array(
+							'name' => __( 'Home Hero Slides' ),
+							'singular_name' => __( 'Home Hero Slide' )
+					),
+					'public' => true,
+					'has_archive' => true,
+					'rewrite' => array('slug' => 'home-hero-slides'),
+					'show_in_rest' => true,
+					'menu_icon'   => 'dashicons-format-gallery',
+
+			)
+	);
+
+	register_post_type( 'menus',
+			array(
+					'labels' => array(
+							'name' => __( 'Menus' ),
+							'singular_name' => __( 'Menu' )
+					),
+					'public' => true,
+					'has_archive' => true,
+					'rewrite' => array('slug' => 'menus'),
+					'show_in_rest' => true,
+					'menu_icon'   => 'dashicons-book',
+
+			)
+	);
+
 }
 
 add_action( 'init', 'create_posttype' );

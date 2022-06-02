@@ -1,12 +1,19 @@
 
+//== Owl Carousel
+
+$(".hero .owl-carousel").owlCarousel({
+  animateOut: 'fadeOut',
+  items: 1,
+  autoplay: true,
+  mouseDrag: false,
+  touchDrag: false,
+  autoplayTimeout: 6000,
+  loop: true
+});
+
+
 
 //== Reviews Carousel
-
-// $(".reviews-panel .owl-carousel").owlCarousel({
-//   items: 1,
-//   margin: 20
-// });
-
 
 function responsiveCarousel() {
   let breakPoint = 1366;

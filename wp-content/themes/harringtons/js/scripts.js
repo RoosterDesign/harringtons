@@ -18,18 +18,6 @@ window.onscroll = function (e) {
 
 
 
-//== Owl Carousel
-
-$(".hero .owl-carousel").owlCarousel({
-  animateOut: 'fadeOut',
-  items: 1,
-  autoplay: true,
-  mouseDrag: false,
-  touchDrag: false,
-  autoplayTimeout: 4000
-});
-
-
 //== Scroll to booking Section
 
 function scrollToBook() {

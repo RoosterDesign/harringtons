@@ -28,7 +28,8 @@ Template Name: Functions
   <!-- end: Full Width Image -->
 
   <!-- Menus -->
-  <?php include get_theme_file_path("templates/partials/menus-list.php"); ?>
+  <?php $menuType = 'wedding';
+  include get_theme_file_path("templates/partials/menus-list.php"); ?>
   <!-- end: Menus -->
 
   <!-- Reservation Panel -->

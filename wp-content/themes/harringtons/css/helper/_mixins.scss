@@ -46,7 +46,7 @@ $breakpoints: (mobile-lg: 375px,
 
 //== Image mask
 
-@mixin mask($bg: rgba(0,0,0,.6)) {
+@mixin mask($bg: rgba(0,0,0,.5)) {
     background: $bg;
     content: '';
     height: 100%;

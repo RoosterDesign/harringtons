@@ -23,7 +23,7 @@
     }
   </style>
 
-  <section class="reservation-panel">
+  <section class="reservation-panel<?php if( get_field('has_mask') ) { echo ' reservation-panel--has-mask'; }; ?>">
     <div class="container">
     <div class="resdiary">
       <?php echo get_option('resdiary_embed'); ?>

@@ -24,7 +24,7 @@
     padding: inc_to_rem(30) 0;
   }
 
-  &:after { @include mask; }
+  &--has-mask:after { @include mask; }
 
   .container {
 

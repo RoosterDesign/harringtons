@@ -25,7 +25,7 @@
     }
   </style>
 
-  <section class="menu-panel">
+  <section class="menu-panel<?php if( get_field('has_mask') ) { echo ' menu-panel--has-mask'; }; ?>">
     <div class="container">
       <div class="menu-panel__content animate">
         <h1 class="menu-panel__title"><?php the_field('title'); ?></h1>

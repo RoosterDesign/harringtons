@@ -14,7 +14,7 @@ Template Name: Reservations
   <section class="resdiary-wrap">
     <div class="container">
       <div class="resdiary">
-        resdiary
+        <?php echo get_option('resdiary_embed'); ?>
       </div>
     </div>
   </section>

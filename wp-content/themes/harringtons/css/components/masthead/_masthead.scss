@@ -20,7 +20,7 @@
     padding-bottom: inc_to_rem(6);
   }
 
-  &:after { @include mask; }
+  &--has-mask:after { @include mask; }
 
   .container {
     justify-content: flex-end;

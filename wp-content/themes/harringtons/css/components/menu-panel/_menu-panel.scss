@@ -20,7 +20,7 @@
     min-height: 1000px;
   }
 
-  &:after { @include mask; }
+  &--has-mask:after { @include mask; }
 
   &__content {
     display: flex;
