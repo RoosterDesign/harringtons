@@ -1,9 +1,12 @@
+<?php $args = array('p' => 483, 'post_type' => 'content-blocks'); $the_query = new WP_Query( $args );  ?>
+<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 <section class="instagram-panel">
   <div class="container">
-    <h1 class="instagram-panel__title">Latest from Instagram</h1>
-    <p class="instagram-panel__content">Follow us on Instagram to keep up to date with all our events and offers - <a href="" title="Follow us on Instagram">@harringtonsonthehill</a>.</p>
+    <h1 class="instagram-panel__title"><?php the_field('title'); ?></h1>
+    <p class="instagram-panel__content"><?php the_field('body'); ?></p>
     <div class="instagram-feed">
-      <?php echo do_shortcode( '[instagram feed="183"]' ); ?>
+      <?php echo do_shortcode(get_field("feed_id")); ?>
     <div>
   </div>
 </section>
+<?php endwhile; wp_reset_postdata(); endif; ?>

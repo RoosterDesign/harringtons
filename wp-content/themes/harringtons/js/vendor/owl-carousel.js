@@ -1068,7 +1068,7 @@
 								this.next(c.navSpeed);
 							}, this)
 						)),
-					c.dotsData || (this._templates = [a('<button role="button">').addClass(c.dotClass).append(a('<span>')).prop('outerHTML')]),
+					c.dotsData || (this._templates = [a('<button role="button" aria-label="Carousel Control">').addClass(c.dotClass).append(a('<span>')).prop('outerHTML')]),
 					(this._controls.$absolute = (c.dotsContainer ? a(c.dotsContainer) : a('<div>').addClass(c.dotsClass).appendTo(this.$element)).addClass('disabled')),
 					this._controls.$absolute.on(
 						'click',

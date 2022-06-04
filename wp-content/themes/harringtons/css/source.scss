@@ -17,6 +17,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 @import './vendor/normalize';
+@import './fonts/_fonts';
 @import './vendor/_owl-carousel';
 @import './helper/_mixins';
 @import './components/button/_button';
@@ -37,19 +38,24 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import './components/menu-item/_menu-item';
 @import './components/resdiary/_resdiary';
 @import './components/squares/_squares';
+@import './components/wedding-menus/_wedding-menus';
+@import './components/contact-form/_contact-form';
+@import './components/map/_map';
+@import './components/page-content/_page-content';
+
 
 :root {
   
   //== Colours
-
   --white: #fff;
-  --darkGrey: #1e1e1e;
+  // --darkGrey: #1e1e1e;
+  --darkGrey: #161616;
   --lightGrey: #FAFAFA;
   --green: #6B7963;
   --rating-green: #00AA6C;
 
-  //== General
 
+  //== General
   --unit: 9px;
   --body-bg: var(--lightGrey);
   --border-radius: 4px;
@@ -57,7 +63,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
   
   
   //== Type
-
   --font: 'Jost', sans-serif;
   --font-light: 300;
   --font-regular: 400;
@@ -72,7 +77,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== Buttons
-
   --btn-primary-bg: var(--green);
   --btn-primary-colour: var(--white);
   --btn-secondary-border: 2px solid var(--white);
@@ -82,7 +86,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== Header  
-
   --header-bg: var(--darkGrey);
   --header-height: 80px;
   --header-padding: 20px;  
@@ -93,7 +96,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== Nav
-
   --mobile-nav-bg: var(--darkGrey);
   --nav-link-colour: var(--white);
   --mobile-nav-colour: var(--white);
@@ -103,7 +105,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== Footer
-
   --footer-bg: var(--darkGrey);
   --footer-colour: var(--white);
   --footer-link-colour: var(--white);
@@ -113,24 +114,31 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
   //== Panels
-
   --panel-bg: var(--white);
   --panel-box-shadow: 0 10px 30px rgba(0,0,0,.06);
   --panel-box-shadow-hover: 0 15px 35px rgba(0,0,0,0.5);
   --panel-padding: calc(9px * 4) calc(9px * 3);
   
 
-
   //== Blocks
-
   --block-padding: calc(9px * 5);
 
 
   //== Hero
-
   --hero-height: 500px;
   --hero-max-height: 1000px;
-  
+
+
+  //== Contact
+  --contact-form-bg: var(--darkGrey);
+  --contact-form-colour: var(--white);
+  --form-input-height: 50px;
+  --form-textarea-height: 120px;
+  --form-placeholder-colour: rgba(39, 39, 39, 0.5);
+  --form-placeholder-error-colour: var(--white);
+  --form-error: #D16059;
+  --form-success: #59D182;
+
 }
 
 
@@ -141,6 +149,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --nav-padding: 60px;
     --hero-height: 650px;
     --block-padding: calc(9px * 7);
+    --form-input-height: 60px;
+    --form-textarea-height: 150px;
   }
 }
 
@@ -152,7 +162,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
     --header-height: 140px;
     --header-padding: 40px;
     --max-content-width: 1200px;
-    --panel-padding: calc(9px * 4);
+    // --panel-padding: calc(9px * 4);
     --block-padding: calc(9px * 8);
     --masthead-height: 350px;
   }
@@ -260,6 +270,7 @@ p {
   max-width: var(--max-content-width);
   padding: 0 inc_to_rem(2);
   position: relative;
+  width: 100%;
   z-index: 1;
 
   @include mq(tablet) {

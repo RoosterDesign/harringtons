@@ -2,7 +2,7 @@
   <div class="container">
     <div class="site-footer__col site-footer__col--first">
       <a href="/" title="Harringtons on the Hill" class="site-footer__logo">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Harringtons on the Hill" class="img-responsive" />
+        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Harringtons on the Hill" class="img-responsive" width="250" height="52" />
       </a>
       <p><?php echo get_option('footer_text'); ?></p>
       <ul class="footer-social">
@@ -24,11 +24,11 @@
       </ul>
     </div>
     <div class="site-footer__col site-footer__col--links">
-      <h3 class="site-footer__heading">Links</h3>
+      <h2 class="site-footer__heading">Links</h2>
       <?php wp_nav_menu( array( 'menu' => 'main-menu', 'menu_class' => 'site-footer-links', 'container' => 'ul', )); ?>     
     </div>    
     <div class="site-footer__col site-footer__col--contact">
-      <h3 class="site-footer__heading">Contact</h3>
+      <h2 class="site-footer__heading">Contact</h2>
       <p>
         <strong>Tel</strong>
         <?php echo get_option('tel_number'); ?>
@@ -49,7 +49,7 @@
       </p>
     </div>
     <div class="site-footer__col site-footer__col--hours">
-      <h3 class="site-footer__heading">Hours</h3>
+      <h2 class="site-footer__heading">Hours</h2>
       <p>
         <strong><?php echo get_option('opening_hours_1_label'); ?></strong>
         <?php echo get_option('opening_hours_1_data'); ?>

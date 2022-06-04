@@ -12,7 +12,7 @@
 <body <?php body_class(); ?>>
 <header class="site-header">
   <a href="/" title="Harringtons on the Hill" class="site-header__logo">
-    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Harringtons on the Hill" class="img-responsive" />
+    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Harringtons on the Hill" class="img-responsive" width="300" height="62" />
   </a>
   <span class="burger js-open-nav"><span></span></span>
   <nav class="nav">

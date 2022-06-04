@@ -1,3 +1,14 @@
+// Passive event listeners
+jQuery.event.special.touchstart = {
+  setup: function( _, ns, handle ) {
+      this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+  }
+};
+jQuery.event.special.touchmove = {
+  setup: function( _, ns, handle ) {
+      this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+  }
+};
 
 //== Sticky Header
 
@@ -16,6 +27,19 @@ window.onscroll = function (e) {
   sitckyHeader(window.scrollY);
 };
 
+
+// Smooth Scroll
+function smoothScroll(target) {
+  let header = document.querySelector('.site-header');
+  let headerHeight = header.offsetHeight;
+  let elementPosition = target.getBoundingClientRect().top;
+  let offsetPosition = elementPosition + window.pageYOffset - headerHeight + 1;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+  });
+}
 
 
 //== Scroll to booking Section
@@ -38,17 +62,11 @@ function scrollToBook() {
     btn.addEventListener('click', function(e){
       e.preventDefault();
 
-      let headerHeight = header.offsetHeight;
-      let elementPosition = target.getBoundingClientRect().top;
-      let offsetPosition = elementPosition + window.pageYOffset - headerHeight + 1;
+      // Scroll to section
+      smoothScroll(target);
 
       // Close mobile nav
       header.classList.remove('site-header--nav-open');
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
 
     });
     
@@ -89,7 +107,27 @@ function waypoints() {
     })  
   };
 };
-  
+
+
+//== Smooth Scroll to Anchor
+function scrollToAnchor() {
+  let triggers = document.querySelectorAll('.js-scroll');
+  for (let i = 0; i < triggers.length; i++) {
+    const trigger = triggers[i];
+
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      let target = document.querySelector(trigger.getAttribute("href"));
+      // .substring(1);
+      console.log(target);
+
+      // Scroll to section
+      smoothScroll(target);
+
+    })
+    
+  }
+}
 
 //== On Document Load
 
@@ -97,4 +135,5 @@ document.addEventListener("DOMContentLoaded", function() {
   scrollToBook();
   mobileNavToggle();
   waypoints();
+  scrollToAnchor();
 });

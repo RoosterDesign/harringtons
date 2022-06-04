@@ -36,17 +36,21 @@
 
   &__logo {
     display: flex;
+    min-width: 200px;
     width: 200px;
 
     @include mq(tablet) {
+      min-width: 200px;
       width: 200px;
     }
 
     @include mq(desktop) {
+      min-width: 250px;
       width: 250px;
     }
 
     @include mq(desktop-lg) {
+      min-width: 300px;
       width: 300px;
     }
 

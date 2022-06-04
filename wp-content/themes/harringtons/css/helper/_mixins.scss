@@ -109,7 +109,8 @@ $base-unit: 9;
     margin: 0 auto inc_to_rem(4);
     
     @include mq(tablet) {
-      margin-bottom: inc_to_rem(4);
+        line-height: inc_to_rem(4);
+        margin-bottom: inc_to_rem(4);
     }
 
     @include mq(tablet-lg) {

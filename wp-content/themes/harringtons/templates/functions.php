@@ -7,34 +7,51 @@ Template Name: Functions
 
 <div class="page">
   
-  <!-- Masthead -->
   <?php include get_theme_file_path("templates/partials/masthead.php"); ?>  
-  <!-- end: Masthead -->
 
-  <!-- Square Content Row -->
-  <?php include get_theme_file_path("templates/partials/square-row.php"); ?>    
-  <!-- end: Square Content Row -->
+  <?php
+    $block = get_field('event_block');
+    $image = $block['image'];
+    $textPosition = $block['text_position'];
+    $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
+    $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
+    $desktopImage = $image['sizes'][ 'fw-img-desktop' ];
+    include get_theme_file_path("templates/partials/square-row.php");
+  ?>    
 
-  <!-- Square Content Row -->
-  <?php include get_theme_file_path("templates/partials/square-row.php"); ?>    
-  <!-- end: Square Content Row -->
+  <?php
+    $block = get_field('wedding_block');
+    $image = $block['image'];
+    $textPosition = $block['text_position'];
+    $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
+    $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
+    $desktopImage = $image['sizes'][ 'fw-img-desktop' ];
+    include get_theme_file_path("templates/partials/square-row.php");
+  ?>
 
-  <!-- Square Content Row -->
-  <?php include get_theme_file_path("templates/partials/square-row.php"); ?>    
-  <!-- end: Square Content Row -->
+  <?php
+    $block = get_field('event_other_block');
+    $image = $block['image'];
+    $textPosition = $block['text_position'];
+    $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
+    $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
+    $desktopImage = $image['sizes'][ 'fw-img-desktop' ];
+    include get_theme_file_path("templates/partials/square-row.php");
+  ?>    
 
-  <!-- Full Width Image -->
   <?php include get_theme_file_path("templates/partials/full-width-image.php"); ?>    
-  <!-- end: Full Width Image -->
 
-  <!-- Menus -->
-  <?php $menuType = 'wedding';
-  include get_theme_file_path("templates/partials/menus-list.php"); ?>
-  <!-- end: Menus -->
+  <?php $weddingMenus = get_field('wedding_menus'); $menuType = 'wedding-menus'; ?>
+  <section class="wedding-menus" id="menus">
+    <div class="container">
+      <h1 class="wedding-menus__title"><?php echo $weddingMenus['title']; ?></h1>
+      <p class="wedding-menus__body"><?php echo $weddingMenus['body']; ?></p>
+      <?php include get_theme_file_path("templates/partials/menus-list.php"); ?>
+    </div>
+  </section>
 
-  <!-- Reservation Panel -->
   <?php include get_theme_file_path("templates/partials/reservations-panel.php"); ?>    
-  <!-- end: Reservation Panel -->
+
 
 </div>
 

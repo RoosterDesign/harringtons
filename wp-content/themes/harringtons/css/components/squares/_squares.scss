@@ -30,8 +30,8 @@
       @include mq(tablet-lg) {
         flex-direction: row-reverse;
       }    
-    }
 
+    }
 
     .square-text {
 
@@ -57,6 +57,14 @@
 
     }
 
+  }
+
+  
+  //== Contact Form
+
+  &--form {
+    background: var(--contact-form-bg);
+    color: var(--contact-form-colour);
   }
 
 }
@@ -89,21 +97,28 @@
     line-height: inc_to_rem(5);
     margin-bottom: inc_to_rem(2);
 
+    @include mq(tablet) {
+      margin-bottom: inc_to_rem(3);
+    }
+
     @include mq(desktop) {
       font-size: inc_to_rem(5);
       line-height: inc_to_rem(6);
       margin-bottom: inc_to_rem(3);
     }
 
+    @include mq(desktop-lg) {
+      line-height: inc_to_rem(7);
+    }
+
   }
 
   p {
     font-size: inc_to_rem(2);
-    line-height: inc_to_rem(3);
+    line-height: inc_to_rem(4);
     margin-bottom: inc_to_rem(3);
 
     @include mq(desktop) {
-      line-height: inc_to_rem(4);
       margin-bottom: inc_to_rem(4);
     }
 
@@ -140,6 +155,35 @@
     height: 100%;
     object-fit: cover;
     width: 100%;
+  }
+
+}
+
+
+//== Contact Page
+
+body.page-template-contact {
+
+  .square-text {
+
+    &__title {
+  
+      @include mq(desktop-lg) {
+        margin-bottom: inc_to_rem(4);
+      }
+    
+    }
+
+    p {
+
+      @include mq(desktop-lg) {
+        font-size: inc_to_rem(3);
+        line-height: inc_to_rem(5);
+        margin-bottom: inc_to_rem(5);
+      }
+    
+    }
+
   }
 
 }

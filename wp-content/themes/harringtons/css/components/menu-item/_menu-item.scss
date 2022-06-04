@@ -1,6 +1,8 @@
 
 .menu {
   @include smallPanel(false);
+  display: flex;
+  flex-direction: column;
   margin-bottom: inc_to_rem(2);
   text-decoration: none;
   transition: box-shadow .2s ease-in-out;
@@ -41,13 +43,20 @@
     padding: inc_to_rem(3);
 
     @include mq(tablet) {
-      font-size: var(--sub-title-font-size);
-      line-height: var(--sub-title-line-height);
+      font-size: inc_to_rem(2);
+      line-height: inc_to_rem(3);
+      padding: inc_to_rem(2);
+    }
+
+    @include mq(tablet-lg) {
+      // font-size: var(--sub-title-font-size);
+      // line-height: var(--sub-title-line-height);
     }
 
     @include mq(desktop) {
       font-size: inc_to_rem(3);
       line-height: inc_to_rem(4);
+      padding: inc_to_rem(3);
     }
 
     @include mq(desktop-lg) {

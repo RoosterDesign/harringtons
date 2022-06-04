@@ -54,13 +54,41 @@
 
   &__body {
     font-size: inc_to_rem(2);
-    line-height: inc_to_ren(3);
+    line-height: inc_to_rem(3);
 
     @include mq(tablet-lg) {
       font-size: inc_to_rem(3);
-      line-height: inc_to_ren(4);
+      line-height: inc_to_rem(4);
+    }
+
+    @include mq(desktop) {
+      line-height: inc_to_rem(5);
+    }
+
+    a {
+      @include textLink(var(--white));
     }
 
   }  
   
+}
+
+
+//== Reservations Page
+
+body.page-template-reservations {
+
+  .masthead {
+
+    &__body {
+      @include mq(tablet-lg) {
+        max-width: 60%;
+      }
+      @include mq(desktop-lg) {
+        max-width: 800px;
+      }
+    }
+
+  }
+
 }

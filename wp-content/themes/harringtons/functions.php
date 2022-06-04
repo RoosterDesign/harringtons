@@ -28,7 +28,7 @@ register_nav_menus(
 function harringtons_scripts() {
   	
 	//== Google Fonts
-	 wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap', false );
+	//  wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap', false );
 	
 
 	//== jQuery
@@ -45,17 +45,37 @@ function harringtons_scripts() {
 	//== Global Scripts
 	wp_enqueue_script( 'harringtons-global', get_template_directory_uri() . '/js/scripts.js', array(), _S_VERSION, true );
 
-	//== Homepage Carousel
+	//== Homepage Scripts
 	if ( is_page_template( 'templates/homepage.php' ) ) {
-
 		wp_enqueue_style( 'harringtons-animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', array(), _S_VERSION, true );
-
 		wp_enqueue_script( 'harringtons-homepage', get_template_directory_uri() . '/js/home.js', array('harringtons-jquery'), _S_VERSION, true );
+	}
 
+	//== Contact Page Scripts
+	if ( is_page_template( 'templates/contact.php' ) ) {
+		wp_enqueue_script( 'harringtons-homepage', get_template_directory_uri() . '/js/contact.js', array(), _S_VERSION, true );
 	}
 
 }
 add_action( 'wp_enqueue_scripts', 'harringtons_scripts' );
+
+
+
+//== Disable WP Forms Scroll
+ 
+function wpf_dev_disable_scroll_effect_on_all_forms( $forms ) { 
+	foreach ( $forms as $form ) {
+					?>
+					<script type="text/javascript">
+					wpforms.scrollToError = function(){};
+					wpforms.animateScrollTop = function(){};
+					</script>
+					<?php
+					
+	}
+}
+add_action( 'wpforms_wp_footer_end', 'wpf_dev_disable_scroll_effect_on_all_forms', 10, 1 );
+
 
 
 
@@ -70,10 +90,11 @@ function create_posttype() {
 							'singular_name' => __( 'Review' )
 					),
 					'public' => true,
-					'has_archive' => true,
+					'has_archive' => false,
 					'rewrite' => array('slug' => 'reviews'),
 					'show_in_rest' => true,
 					'menu_icon'   => 'dashicons-star-filled',
+					'menu_position' => 6
 
 			)
 	);
@@ -85,10 +106,11 @@ function create_posttype() {
 							'singular_name' => __( 'Content Block' )
 					),
 					'public' => true,
-					'has_archive' => true,
+					'has_archive' => false,
 					'rewrite' => array('slug' => 'content-blocks'),
 					'show_in_rest' => true,
 					'menu_icon'   => 'dashicons-align-center',
+					'menu_position' => 5
 
 			)
 	);
@@ -100,10 +122,11 @@ function create_posttype() {
 							'singular_name' => __( 'Offer' )
 					),
 					'public' => true,
-					'has_archive' => true,
+					'has_archive' => false,
 					'rewrite' => array('slug' => 'offers'),
 					'show_in_rest' => true,
 					'menu_icon'   => 'dashicons-awards',
+					'menu_position' => 9
 
 			)
 	);
@@ -115,10 +138,11 @@ function create_posttype() {
 							'singular_name' => __( 'Home Hero Slide' )
 					),
 					'public' => true,
-					'has_archive' => true,
+					'has_archive' => false,
 					'rewrite' => array('slug' => 'home-hero-slides'),
 					'show_in_rest' => true,
-					'menu_icon'   => 'dashicons-format-gallery',
+					'menu_icon'   => 'dashicons-slides',
+					'menu_position' => 4
 
 			)
 	);
@@ -130,11 +154,26 @@ function create_posttype() {
 							'singular_name' => __( 'Menu' )
 					),
 					'public' => true,
-					'has_archive' => true,
+					'has_archive' => false,
 					'rewrite' => array('slug' => 'menus'),
 					'show_in_rest' => true,
 					'menu_icon'   => 'dashicons-book',
+					'menu_position' => 7
+			)
+	);
 
+	register_post_type( 'wedding-menus',
+			array(
+					'labels' => array(
+							'name' => __( 'Wedding Menus' ),
+							'singular_name' => __( 'Wedding Menu' )
+					),
+					'public' => true,
+					'has_archive' => false,
+					'rewrite' => array('slug' => 'wedding-menus'),
+					'show_in_rest' => true,
+					'menu_icon'   => 'dashicons-book',
+					'menu_position' => 8
 			)
 	);
 
@@ -170,6 +209,40 @@ if ( function_exists( 'add_theme_support' ) ) {
 	add_image_size( 'fw-img-desktop', 1920, 1920, true );
 	add_image_size( 'fw-img-desktop-lg', 2560, 2560, true );
 	add_image_size( 'offer', 480, 330, true );
+}
+
+
+
+
+//== Customise ACF WYSIWYG Editor
+
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );
+function my_toolbars( $toolbars )
+{
+	// Uncomment to view format of $toolbars
+	
+	// echo '< pre >';
+	// 	print_r($toolbars);
+	// echo '< /pre >';
+	// die;
+
+	// Add a new toolbar called "Very Simple"
+	// - this toolbar has only 1 row of buttons
+	$toolbars['Very Simple' ] = array();
+	$toolbars['Very Simple' ][1] = array('bold' , 'italic' , 'underline', 'link', 'removeformat', 'undo', 'redo' );
+
+	// Edit the "Full" toolbar and remove 'code'
+	// - delet from array code from http://stackoverflow.com/questions/7225070/php-array-delete-by-value-not-key
+	if( ($key = array_search('code' , $toolbars['Full' ][2])) !== false )
+	{
+	    unset( $toolbars['Full' ][2][$key] );
+	}
+
+	// remove the 'Basic' toolbar completely
+	unset( $toolbars['Basic' ] );
+
+	// return $toolbars - IMPORTANT!
+	return $toolbars;
 }
 
 
@@ -330,6 +403,15 @@ function awesome_page_create() {
 			}
 			$no_offers_text = get_option('no_offers_text', '');
 
+
+			//== Fallback Masthead Image
+			if (isset($_POST['masthead_fallback_image'])) {
+				$masthead_fallback_image = stripslashes($_POST['masthead_fallback_image']);
+				update_option('masthead_fallback_image', $masthead_fallback_image);
+			}
+			$masthead_fallback_image = get_option('masthead_fallback_image', '');
+
+
 		?>
 
 		<style>
@@ -457,6 +539,15 @@ function awesome_page_create() {
 					<div class="settingsGroup">
 						<label for="no_offers_text">No Offers Text</label><br>
 						<textarea name="no_offers_text" id="no_offers_text"><?php echo $no_offers_text; ?></textarea>
+					</div>
+
+					<hr />
+
+					<h2>Fallback Images</h2>
+
+					<div class="settingsGroup">
+						<label for="masthead_fallback_image">Fallback Masthead Image</label><br>
+						<input type="text" name="masthead_fallback_image" id="masthead_fallback_image" value="<?php echo $masthead_fallback_image; ?>">
 					</div>
 
     			<input type="submit" value="Save" class="button button-primary button-large">
