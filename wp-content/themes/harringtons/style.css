@@ -3986,11 +3986,11 @@ body.home .site-header {
   }
 }
 
-.wedding-menus {
+.function-menus {
   padding: var(--block-padding) 0;
 }
 
-.wedding-menus__title {
+.function-menus__title {
   font-size: 3.6rem;
   font-weight: var(--font-bold);
   line-height: 4.5rem;
@@ -3999,20 +3999,20 @@ body.home .site-header {
 }
 
 @media (min-width: 992px) {
-  .wedding-menus__title {
+  .function-menus__title {
     font-size: 4.5rem;
     margin-bottom: 2.7rem;
   }
 }
 
 @media (min-width: 1366px) {
-  .wedding-menus__title {
+  .function-menus__title {
     font-size: 6.3rem;
     margin-bottom: 3.6rem;
   }
 }
 
-.wedding-menus__body {
+.function-menus__body {
   font-size: 1.8rem;
   line-height: 2.7rem;
   margin: 0 auto 3.6rem;
@@ -4020,20 +4020,20 @@ body.home .site-header {
 }
 
 @media (min-width: 768px) {
-  .wedding-menus__body {
+  .function-menus__body {
     line-height: 3.6rem;
     margin-bottom: 3.6rem;
   }
 }
 
 @media (min-width: 992px) {
-  .wedding-menus__body {
+  .function-menus__body {
     max-width: 800px;
   }
 }
 
 @media (min-width: 1366px) {
-  .wedding-menus__body {
+  .function-menus__body {
     font-size: 2.7rem;
     line-height: 4.5rem;
     margin-bottom: 5.4rem;
@@ -4041,7 +4041,7 @@ body.home .site-header {
   }
 }
 
-.wedding-menus__body a:not([href^="tel:"]) {
+.function-menus__body a:not([href^="tel:"]) {
   border-bottom: 2px solid var(--text-link-colour);
   color: var(--text-link-colour);
   font-weight: var(--font-bold);
@@ -4050,11 +4050,11 @@ body.home .site-header {
   transition: color .2s ease-in-out;
 }
 
-.wedding-menus__body a:not([href^="tel:"]):hover {
+.function-menus__body a:not([href^="tel:"]):hover {
   color: var(--text-link-hover-colour);
 }
 
-.wedding-menus .menu-list {
+.function-menus .menu-list {
   padding: 0;
 }
 

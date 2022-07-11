@@ -162,15 +162,15 @@ function create_posttype() {
 			)
 	);
 
-	register_post_type( 'wedding-menus',
+	register_post_type( 'function-menus',
 			array(
 					'labels' => array(
-							'name' => __( 'Wedding Menus' ),
-							'singular_name' => __( 'Wedding Menu' )
+							'name' => __( 'Function Menus' ),
+							'singular_name' => __( 'Function Menu' )
 					),
 					'public' => true,
 					'has_archive' => false,
-					'rewrite' => array('slug' => 'wedding-menus'),
+					'rewrite' => array('slug' => 'function-menus'),
 					'show_in_rest' => true,
 					'menu_icon'   => 'dashicons-book',
 					'menu_position' => 8
@@ -271,13 +271,6 @@ function awesome_page_create() {
 			}
 			$tel_number = get_option('tel_number', '');
 
-			//== Fax
-			if (isset($_POST['fax_number'])) {
-				$fax_number = $_POST['fax_number'];
-				update_option('fax_number', $fax_number);
-			}
-			$fax_number = get_option('fax_number', '');
-
 			//== Email Address
 			if (isset($_POST['email_address'])) {
 				$email_address = $_POST['email_address'];
@@ -340,6 +333,19 @@ function awesome_page_create() {
 				update_option('opening_hours_3_data', $opening_hours_3_data);
 			}
 			$opening_hours_3_data = get_option('opening_hours_3_data', '');
+
+			//== Opening Hours 4
+			if (isset($_POST['opening_hours_4_label'])) {
+				$opening_hours_4_label = $_POST['opening_hours_4_label'];
+				update_option('opening_hours_4_label', $opening_hours_4_label);
+			}
+			$opening_hours_4_label = get_option('opening_hours_4_label', '');
+
+			if (isset($_POST['opening_hours_4_data'])) {
+				$opening_hours_4_data = stripslashes($_POST['opening_hours_4_data']);
+				update_option('opening_hours_4_data', $opening_hours_4_data);
+			}
+			$opening_hours_4_data = get_option('opening_hours_4_data', '');
 
 
 			//== Facebook Social Link
@@ -432,11 +438,6 @@ function awesome_page_create() {
 					</div>	
 
 					<div class="settingsGroup">
-						<label for="fax_number">Fax Number</label><br>
-						<input type="text" name="fax_number" id="fax_number" value="<?php echo $fax_number; ?>">
-					</div>
-
-					<div class="settingsGroup">
 						<label for="email_address">Email Address</label><br>
 						<input type="text" name="email_address" id="email_address" value="<?php echo $email_address; ?>">
 					</div>
@@ -483,6 +484,16 @@ function awesome_page_create() {
 					<div class="settingsGroup">
 						<label for="opening_hours_3_data">Opening Hours 3 hours</label><br>
 						<textarea name="opening_hours_3_data" id="opening_hours_3_data"><?php echo $opening_hours_3_data; ?></textarea>
+					</div>
+
+					<div class="settingsGroup">
+						<label for="opening_hours_4_label">Opening Hours 4 label</label><br>
+						<input type="text" name="opening_hours_4_label" id="opening_hours_4_label" value="<?php echo $opening_hours_4_label; ?>">
+					</div>
+
+					<div class="settingsGroup">
+						<label for="opening_hours_4_data">Opening Hours 4 hours</label><br>
+						<textarea name="opening_hours_4_data" id="opening_hours_4_data"><?php echo $opening_hours_4_data; ?></textarea>
 					</div>
 
 					<hr />

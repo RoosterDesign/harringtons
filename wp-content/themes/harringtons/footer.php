@@ -34,10 +34,6 @@
         <?php echo get_option('tel_number'); ?>
       </p>
       <p>
-        <strong>Fax</strong>
-        <?php echo get_option('fax_number'); ?>
-      </p>
-      <p>
         <strong>Email</strong>
         <a href="mailto:<?php echo get_option('email_address'); ?>?subject=Website Enquiry" target="_blank" title="Email Harringtons on the Hill"><?php echo get_option('email_address'); ?></a>
       </p>
@@ -56,11 +52,16 @@
       </p>
       <p>
       <strong><?php echo get_option('opening_hours_2_label'); ?></strong>
-        <?php echo nl2br(get_option('opening_hours_2_data')); ?>
+        <?php /* echo nl2br(get_option('opening_hours_2_data')); */ ?>
+        <?php echo get_option('opening_hours_2_data'); ?>
       </p>
       <p>
         <strong><?php echo get_option('opening_hours_3_label'); ?></strong>
         <?php echo get_option('opening_hours_3_data'); ?>
+      </p>
+      <p>
+        <strong><?php echo get_option('opening_hours_4_label'); ?></strong>
+        <?php echo get_option('opening_hours_4_data'); ?>
       </p>
     </div>
     <div class="site-footer-bottom">

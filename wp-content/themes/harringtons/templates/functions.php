@@ -10,7 +10,7 @@ Template Name: Functions
   <?php include get_theme_file_path("templates/partials/masthead.php"); ?>  
 
   <?php
-    $block = get_field('event_block');
+    $block = get_field('function_block_1');
     $image = $block['image'];
     $textPosition = $block['text_position'];
     $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
@@ -21,7 +21,7 @@ Template Name: Functions
   ?>    
 
   <?php
-    $block = get_field('wedding_block');
+    $block = get_field('function_block_2');
     $image = $block['image'];
     $textPosition = $block['text_position'];
     $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
@@ -32,7 +32,7 @@ Template Name: Functions
   ?>
 
   <?php
-    $block = get_field('recommendations_block');
+    $block = get_field('function_block_3');
     $image = $block['image'];
     $textPosition = $block['text_position'];
     $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
@@ -41,14 +41,15 @@ Template Name: Functions
     include get_theme_file_path("templates/partials/square-row.php");
     $image = null;
   ?> 
+  
 
   <?php include get_theme_file_path("templates/partials/full-width-image.php"); ?>    
 
-  <?php $weddingMenus = get_field('wedding_menus'); $menuType = 'wedding-menus'; ?>
-  <section class="wedding-menus" id="menus">
+  <?php $functionMenus = get_field('function_menus'); $menuType = 'function-menus'; ?>
+  <section class="function-menus" id="menus">
     <div class="container">
-      <h1 class="wedding-menus__title"><?php echo $weddingMenus['title']; ?></h1>
-      <p class="wedding-menus__body"><?php echo $weddingMenus['body']; ?></p>
+      <h1 class="function-menus__title"><?php echo $functionMenus['title']; ?></h1>
+      <p class="function-menus__body"><?php echo $functionMenus['body']; ?></p>
       <?php include get_theme_file_path("templates/partials/menus-list.php"); ?>
     </div>
   </section>
