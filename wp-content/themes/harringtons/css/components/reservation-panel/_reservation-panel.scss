@@ -1,5 +1,4 @@
 .reservation-panel {
-  background-attachment: fixed;
   background-color: var(--darkGrey);
   background-position: center;
   background-repeat: no-repeat;
@@ -9,6 +8,7 @@
   position: relative;
 
   @include mq(tablet-lg) {
+    background-attachment: fixed;
     padding: inc_to_rem(15) 0;
   }
 

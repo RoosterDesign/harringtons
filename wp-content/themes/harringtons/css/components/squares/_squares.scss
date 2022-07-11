@@ -124,9 +124,7 @@
 
     &:last-child { margin-bottom:  0; }
 
-    a {
-      @include textLink;
-    }
+    a:not([href^="tel:"]) { @include textLink; }
 
   }
 

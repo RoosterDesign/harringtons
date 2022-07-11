@@ -33,9 +33,7 @@
 
     strong { display: block; }
 
-    a {
-      @include textLink(var(--footer-link-colour));
-    }
+    a:not([href^="tel:"]) { @include textLink(var(--footer-link-colour)); }
 
   }
 

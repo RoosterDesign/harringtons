@@ -84,9 +84,7 @@
 
     &:last-child { margin-bottom:  0; }
 
-    a {
-      @include textLink;
-    }
+    a:not([href^="tel:"]) { @include textLink; }
 
   }
 
@@ -98,9 +96,7 @@
       margin: 0 0 inc_to_rem(5) inc_to_rem(6);
     }
 
-    li {
-      margin: 0;
-    }
+    li { margin: 0; }
 
   }
 

@@ -38,6 +38,27 @@ CacheKeyModify -qs:_ga
 </IfModule>
 ## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
 # END LSCACHE
+
+
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /DPA/
+  # check if browser accepts webp
+  RewriteCond %{HTTP_ACCEPT} image/webp 
+
+  # check if file is jpg or png
+  RewriteCond %{REQUEST_FILENAME} (.*)\.(jpe?g|png)$
+
+  # check if corresponding webp file exists image.png -> image.webp
+  RewriteCond %1\.webp -f
+
+  # serve up webp instead
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+
+</IfModule>
+
+
 # BEGIN NON_LSCACHE
 ## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
 ### marker BROWSER CACHE start ###
@@ -79,3 +100,18 @@ ExpiresByType font/woff2 A31557600
 
 ## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
 # END NON_LSCACHE
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

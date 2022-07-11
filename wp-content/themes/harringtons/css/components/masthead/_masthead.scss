@@ -65,9 +65,7 @@
       line-height: inc_to_rem(5);
     }
 
-    a {
-      @include textLink(var(--white));
-    }
+    a:not([href^="tel:"]) { @include textLink(var(--white)); }
 
   }  
   

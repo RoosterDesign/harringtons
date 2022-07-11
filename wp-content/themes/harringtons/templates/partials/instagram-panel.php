@@ -1,4 +1,8 @@
-<?php $args = array('p' => 483, 'post_type' => 'content-blocks'); $the_query = new WP_Query( $args );  ?>
+<?php
+  $pageId = 483;
+  $args = array('p' => $pageId, 'post_type' => 'content-blocks'); $the_query = new WP_Query( $args ); 
+?>
+
 <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 <section class="instagram-panel">
   <div class="container">

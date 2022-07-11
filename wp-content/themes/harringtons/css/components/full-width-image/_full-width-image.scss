@@ -1,5 +1,4 @@
 .full-width-image {
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,6 +6,7 @@
   height: 300px;
 
   @include mq(tablet) {
+    background-attachment: fixed;
     height: 500px;
   }
 

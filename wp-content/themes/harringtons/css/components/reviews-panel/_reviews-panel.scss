@@ -69,7 +69,7 @@
     margin-top: inc_to_rem(3);
     text-align: center;
 
-    a { @include textLink; }
+    a:not([href^="tel:"]) { @include textLink; }
 
     @include mq(tablet-lg) {
       margin-top: inc_to_rem(6);

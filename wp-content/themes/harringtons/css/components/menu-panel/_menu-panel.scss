@@ -1,5 +1,4 @@
 .menu-panel {
-  background-attachment: fixed;
   background-color: var(--darkGrey);
   background-position: center;
   background-repeat: no-repeat;
@@ -9,6 +8,7 @@
   padding: var(--block-padding) 0;
   
   @include mq(tablet) {
+    background-attachment: fixed;
     min-height: 500px;
   }
 

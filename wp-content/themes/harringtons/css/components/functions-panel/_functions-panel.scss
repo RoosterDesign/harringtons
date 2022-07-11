@@ -34,6 +34,7 @@
   }
 
   picture {
+    overflow: hidden;
 
     @include mq(tablet) {
       width: calc(100% / 3 - 16px);

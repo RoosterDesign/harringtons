@@ -124,9 +124,7 @@ $base-unit: 9;
       max-width: 970px;
     }
 
-    a {
-        @include textLink;
-    }
+    a:not([href^="tel:"]) { @include textLink; }
     
 }
 

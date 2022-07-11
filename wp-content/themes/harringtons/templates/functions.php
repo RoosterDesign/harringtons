@@ -17,6 +17,7 @@ Template Name: Functions
     $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
     $desktopImage = $image['sizes'][ 'fw-img-desktop' ];
     include get_theme_file_path("templates/partials/square-row.php");
+    $image = null;
   ?>    
 
   <?php
@@ -27,17 +28,19 @@ Template Name: Functions
     $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
     $desktopImage = $image['sizes'][ 'fw-img-desktop' ];
     include get_theme_file_path("templates/partials/square-row.php");
+    $image = null;
   ?>
 
   <?php
-    $block = get_field('event_other_block');
+    $block = get_field('recommendations_block');
     $image = $block['image'];
     $textPosition = $block['text_position'];
     $mobileImage = $image['sizes'][ 'fw-img-mobile' ];
     $tabletImage = $image['sizes'][ 'fw-img-tablet' ];
     $desktopImage = $image['sizes'][ 'fw-img-desktop' ];
     include get_theme_file_path("templates/partials/square-row.php");
-  ?>    
+    $image = null;
+  ?> 
 
   <?php include get_theme_file_path("templates/partials/full-width-image.php"); ?>    
 

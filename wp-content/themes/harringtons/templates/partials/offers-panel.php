@@ -1,5 +1,8 @@
 <?php
-  $args = array('p' => 48, 'post_type' => 'content-blocks'); $the_query = new WP_Query( $args );
+  $pageId = 48; // DEV
+  // $pageId = 495; PROD
+  $args = array('p' => $pageId, 'post_type' => 'content-blocks'); $the_query = new WP_Query( $args );
+
   if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
   $offers = get_field('offers');
   $buttonLink = get_field('button_link');
