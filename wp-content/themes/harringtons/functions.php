@@ -402,6 +402,14 @@ function awesome_page_create() {
 			$resdiary_embed = get_option('resdiary_embed', '');
 
 
+			//== Resdiary Scripts
+			if (isset($_POST['resdiary_scripts'])) {
+				$resdiary_scripts = stripslashes($_POST['resdiary_scripts']);
+				update_option('resdiary_scripts', $resdiary_scripts);
+			}
+			$resdiary_scripts = get_option('resdiary_scripts', '');
+
+
 			//== Fallback Text - Offers
 			if (isset($_POST['no_offers_text'])) {
 				$no_offers_text = stripslashes($_POST['no_offers_text']);
@@ -541,6 +549,11 @@ function awesome_page_create() {
 					<div class="settingsGroup">
 						<label for="resdiary_embed">Resdiary Embed</label><br>
 						<textarea name="resdiary_embed" id="resdiary_embed"><?php echo $resdiary_embed; ?></textarea>
+					</div>
+
+					<div class="settingsGroup">
+						<label for="resdiary_scripts">Resdiary Scripts</label><br>
+						<textarea name="resdiary_scripts" id="resdiary_scripts"><?php echo $resdiary_scripts; ?></textarea>
 					</div>
 
 					<hr />
