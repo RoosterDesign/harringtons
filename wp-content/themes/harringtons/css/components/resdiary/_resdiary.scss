@@ -5,13 +5,13 @@
     padding-top: inc_to_rem(5);
   }
 
-  @include mq(tablet-lg) {
+  @include mq(desktop) {
     padding-top: 0;
     margin-bottom: inc_to_rem(5);
   }
 
   .container {
-    @include mq(tablet-lg) {
+    @include mq(desktop) {
       align-items: flex-end;
     }
   }
@@ -20,30 +20,20 @@
     background: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--panel-box-shadow);
-    height: 350px;
-    padding: inc_to_rem(1);
+    height: var(--resdiary-height);
     margin: 0 auto;
-    max-width: 350px;
     width: 100%;
 
-    @include mq(tablet-lg) {
-      bottom: -75px;
+    @include mq(desktop) {
       padding: 0;
       position: absolute;
-    }
-
-    @include mq(desktop) {
-      bottom: -100px;
-      height: 450px; 
       max-width: 450px;
+      top: -525px;
     }
 
     @include mq(desktop-lg) {
-      bottom: -125px;
-      height: 550px; 
       max-width: 550px;
-    }
-    
+    }    
 
   }
 

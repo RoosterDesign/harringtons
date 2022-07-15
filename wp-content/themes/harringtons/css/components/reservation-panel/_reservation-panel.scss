@@ -7,21 +7,20 @@
   padding: var(--block-padding) 0;
   position: relative;
 
+  @include mq(tablet) {
+    padding: inc_to_rem(9) 0;
+  }
+
   @include mq(tablet-lg) {
     background-attachment: fixed;
-    padding: inc_to_rem(15) 0;
   }
 
   @include mq(desktop) {
-    padding: inc_to_rem(20) 0;
+    padding: inc_to_rem(17) 0;
   }
 
   @include mq(desktop-md) {
-    padding: inc_to_rem(30) 0;
-  }
-
-  @include mq(desktop-lg) {
-    padding: inc_to_rem(30) 0;
+    padding: inc_to_rem(22) 0;
   }
 
   &--has-mask:after { @include mask; }
@@ -38,6 +37,7 @@
   &__content {
 
     @include mq(tablet) {
+      padding-top: inc_to_rem(3);
       padding-right: 30px;
       width: 375px;
     }
@@ -47,6 +47,7 @@
     }
 
     @include mq(desktop) {
+      padding-top: inc_to_rem(5);
       width: 650px;
     }
 
@@ -55,11 +56,12 @@
   .resdiary {
     background: var(--white);
     border-radius: var(--border-radius);
+    height: var(--resdiary-height);
     margin-bottom: inc_to_rem(3);
-    padding: inc_to_rem(1);
 
     @include mq(tablet) {
       flex: 1;
+      margin: 0;
     }
 
     @include mq(tablet-lg) {

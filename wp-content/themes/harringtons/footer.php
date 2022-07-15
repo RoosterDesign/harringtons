@@ -71,7 +71,7 @@
     </div>
   </div>
 </footer>
-<?php echo get_option('resdiary_scripts'); ?>
+<?php /* echo get_option('resdiary_scripts'); */ ?>
 <?php wp_footer(); ?>
 </body>
 </html>

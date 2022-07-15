@@ -78,8 +78,12 @@ body.page-template-reservations {
 
   .masthead {
 
+    @include mq(desktop) {
+      height: 575px;
+    }
+
     &__body {
-      @include mq(tablet-lg) {
+      @include mq(desktop) {
         max-width: 60%;
       }
       @include mq(desktop-lg) {

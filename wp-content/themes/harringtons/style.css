@@ -2524,28 +2524,27 @@ body.home .site-header {
   position: relative;
 }
 
+@media (min-width: 768px) {
+  .reservation-panel {
+    padding: 8.1rem 0;
+  }
+}
+
 @media (min-width: 992px) {
   .reservation-panel {
     background-attachment: fixed;
-    padding: 13.5rem 0;
   }
 }
 
 @media (min-width: 1366px) {
   .reservation-panel {
-    padding: 18rem 0;
+    padding: 15.3rem 0;
   }
 }
 
 @media (min-width: 1441px) {
   .reservation-panel {
-    padding: 27rem 0;
-  }
-}
-
-@media (min-width: 1920px) {
-  .reservation-panel {
-    padding: 27rem 0;
+    padding: 19.8rem 0;
   }
 }
 
@@ -2573,6 +2572,7 @@ body.home .site-header {
 
 @media (min-width: 768px) {
   .reservation-panel__content {
+    padding-top: 2.7rem;
     padding-right: 30px;
     width: 375px;
   }
@@ -2586,6 +2586,7 @@ body.home .site-header {
 
 @media (min-width: 1366px) {
   .reservation-panel__content {
+    padding-top: 4.5rem;
     width: 650px;
   }
 }
@@ -2593,8 +2594,8 @@ body.home .site-header {
 .reservation-panel .resdiary {
   background: var(--white);
   border-radius: var(--border-radius);
+  height: var(--resdiary-height);
   margin-bottom: 2.7rem;
-  padding: 0.9rem;
 }
 
 @media (min-width: 768px) {
@@ -2602,6 +2603,7 @@ body.home .site-header {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    margin: 0;
   }
 }
 
@@ -3431,7 +3433,13 @@ body.home .site-header {
   color: var(--text-link-hover-colour);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1366px) {
+  body.page-template-reservations .masthead {
+    height: 575px;
+  }
+}
+
+@media (min-width: 1366px) {
   body.page-template-reservations .masthead__body {
     max-width: 60%;
   }
@@ -3728,14 +3736,14 @@ body.home .site-header {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1366px) {
   .resdiary-wrap {
     padding-top: 0;
     margin-bottom: 4.5rem;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1366px) {
   .resdiary-wrap .container {
     -webkit-box-align: end;
         -ms-flex-align: end;
@@ -3748,33 +3756,22 @@ body.home .site-header {
   border-radius: var(--border-radius);
   -webkit-box-shadow: var(--panel-box-shadow);
           box-shadow: var(--panel-box-shadow);
-  height: 350px;
-  padding: 0.9rem;
+  height: var(--resdiary-height);
   margin: 0 auto;
-  max-width: 350px;
   width: 100%;
-}
-
-@media (min-width: 992px) {
-  .resdiary-wrap .resdiary {
-    bottom: -75px;
-    padding: 0;
-    position: absolute;
-  }
 }
 
 @media (min-width: 1366px) {
   .resdiary-wrap .resdiary {
-    bottom: -100px;
-    height: 450px;
+    padding: 0;
+    position: absolute;
     max-width: 450px;
+    top: -525px;
   }
 }
 
 @media (min-width: 1920px) {
   .resdiary-wrap .resdiary {
-    bottom: -125px;
-    height: 550px;
     max-width: 550px;
   }
 }
@@ -4474,6 +4471,7 @@ body.page-template-contact div.wpforms-container-full .wpforms-confirmation-cont
   --form-placeholder-error-colour: var(--white);
   --form-error: #D16059;
   --form-success: #59D182;
+  --resdiary-height: 660px;
 }
 
 @media (min-width: 768px) {

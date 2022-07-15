@@ -31,7 +31,10 @@
   <section class="reservation-panel<?php if( get_field('has_mask') ) { echo ' reservation-panel--has-mask'; }; ?>">
     <div class="container">
     <div class="resdiary">
-      <?php echo get_option('resdiary_embed'); ?>
+      <?php /* echo get_option('resdiary_embed'); */ ?>
+
+      <iframe src="https://booking.resdiary.com/widget/Standard/HarringtonsontheHill/408" allowtransparency="true" frameborder="0" style="width:100%; border:none; max-width: 100%; height: 100%; "></iframe>
+
     </div>
       <div class="reservation-panel__content animate">      
         <h1 class="reservation-panel__title"><?php the_field('title'); ?></h1>
